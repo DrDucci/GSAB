@@ -92,11 +92,11 @@ p{
 }
 
 #contentindex{
-    grid-template-columns: 75% 25%;
+    grid-template-columns:100%;
     grid-template-areas: 
-    "hero hero"
-    "central blog"
-    "footer footer";
+    "hero"
+    "central"
+    "footer";
 }
 
 #content{
@@ -404,7 +404,6 @@ hr{
   
   .wrap{
     width: 80%;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
