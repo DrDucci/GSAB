@@ -1,9 +1,11 @@
 :root{
     /* https://www.realtimecolors.com/?colors=18100f-faf7f7-8d544b-b5cd88-85ac7c&fonts=Poppins-Poppins */
-        --background: #f9fcfa;
+        --background: #716262;
         --primary: #5ba96d;
         --secondary: #a2cec9;
         --accent: #82b8be;
+        --sidebar-gb: #000000;
+        --icon-color: #ffffff;
 
 
         --ljusblå: #8ed0e8;
@@ -30,7 +32,7 @@ img{
 body{
     display: flex;
     flex-direction: column;
-    background-color: var(--Ljusaregrön);
+    background-color: var(--background);
 }
 
 .main{
@@ -38,6 +40,13 @@ body{
     flex-direction: row;
     height: 100%;
     width: 100%;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: var(--header-font);
+    font-weight: 800;
+    font-style: normal;
+    color: black;
 }
 
 h1, h2, h3, h4, h5{
@@ -118,7 +127,7 @@ p{
     border-style: solid;
     border-color: white;
     border-right-color: gray;
-    background-color: white;
+    background-color: var(--sidebar-bg);
 
 }
 
@@ -219,12 +228,17 @@ hr{
 }
 #x_button{
     left: 25%;
-    
+    color: var(--sidebar-bg); 
+    background-color: var(--icon-color);
+    border: none;
     font-size: 4dvh;
 }
 
 #hamburger_button{
     left: 0%;
+    color: var(--sidebar-bg); 
+    background-color: var(--icon-color);
+    border: none;
 
     font-size: 3dvh;
 }
@@ -270,6 +284,136 @@ hr{
     padding: 0.5rem;
 }
 
+/* Film karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.movie-carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 150%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.movie-card {
+    width: 250px;
+    height: 350px;
+    background-color: gray;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.carousel-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Actor karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.actor-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+   
+}
+
+.actor-carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.actor-carousel-track {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+
+}
+
+.actor-card {
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 50% 50%; 
+    border-top-right-radius: 50% 50%; 
+    border-bottom-right-radius: 50% 50%; 
+    border-bottom-left-radius: 50% 50%; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.actor-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+}
+
+/* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 150%;
+    border: 3px solid #979999;
+    border-right: none;
+    padding: 5px;
+    height: 60px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #979999;
+  }
+  
+  .searchTerm:focus{
+    color: #000000;
+  }
+  
+  .searchButton {
+    width: 100px;
+    height: 60px;
+    border: 1px solid #979999;
+    background: #979999;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .wrap{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+
+
+
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 .central{
@@ -281,7 +425,7 @@ hr{
 
     height: 100%;
 
-    background-color:var(--Ljusaregrön);
+    background-color:var(--background);
 }
 
 .central div{
@@ -430,7 +574,7 @@ img[alt="partner3"]{
     width: 25%;
     height: 5vh;
 
-    background-color: var(--ljusgrön);
+    background-color: var(--background);
     color: black;
     font-size: 1.75dvh;
     font-family: var(--header-font);
@@ -560,7 +704,7 @@ footer p, footer h3, footer a{
     width: 15vw;
     height: 5vh;
 
-    background-color: var(--ljusgrön);
+    background-color: var(--background);
     color: black;
     font-size: 1.75dvh;
     font-family: var(--header-font);
@@ -887,7 +1031,7 @@ POLICY--------------------------------------------------------------------------
     flex-direction: column;
     align-items: center;
     padding: 5vh 0;
-    background-color: var(--Ljusaregrön);
+    background-color: var(--background);
 }
 
 #forms form {
@@ -953,7 +1097,7 @@ POLICY--------------------------------------------------------------------------
 }
 
 #forms .theend input[type="submit"] {
-    background-color: var(--ljusgrön);
+    background-color: var(--background);
     border: none;
     border-radius: 20px;
     padding: 1.5vh 3vh;
@@ -1028,7 +1172,7 @@ footer {
     flex-direction: column;
     gap: 5vh;
     padding: 5vh 10%;
-    background-color: var(--Ljusaregrön);
+    background-color: var(--background);
 }
 
 #portfolio div {
@@ -1081,7 +1225,7 @@ footer {
     flex-direction: column;
     gap: 5vh;
     padding: 5vh 10%;
-    background-color: var(--Ljusaregrön);
+    background-color: var(--background);
 }
 
 #tjänster div {
@@ -1129,3 +1273,4 @@ footer {
         margin-bottom: 3vh;
     }
 }
+
