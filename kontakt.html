@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <header id="header" style="left: 0%;">
+        <div id="sidebar">
+            <a id="logo" href="index.html">
+                <img src="pics/Logo.png" alt="logo">
+            </a>
+            <a href="index.html" class="button-item">Home</a><hr>
+            <a href="pp.php" class="button-item">Portfolio</a><hr>
+            <a href="tjänster.php" class="button-item">Services</a><hr>
+            <a href="#" class="button-item">Contact</a><hr>
+            <div class="social">
+                <a href="https://twitter.com/"><img src="pics/twitter.png" alt="twitter"></a>
+                <a href="https://www.linkedin.com/home?originalSubdomain=se"><img src="pics/linkedin.png" alt="linkedin"></a>
+                <a href="https://www.facebook.com/?locale=sv_SE"><img src="pics/facebook.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/"><img src="pics/instagram.png" alt="instagram"></a>
+            </div>
+
+            <button id="hamburger_button" class="hidden" onclick="sb_open()">&#9776;</button>
+            <button id="x_button" class="shown" onclick="sb_close()">&times;</button>
+        </div>  
+    </header>
+    <div id="content" style="margin-left: 0%;">
+        <div class="hero" style="background-image: url('pics/Cornfield1.png');">
+            <div class="shader">
+                <h1>Contact Us</h1>
+                <h4>Talk with experts to see if our services are fit for you</h4>
+            </div>
+        </div>
+        <div id="forms">
+            <form method="post" action="">
+                <h2>Lorem ipsum.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, deleniti quae blanditiis, at molestiae voluptatibus, deserunt laudantium praesentium dolorum aspernatur ullam illo soluta eaque rerum hic nemo nulla mollitia adipisci?</p> <hr>
+                Name: *<input type="text" name="name" id="name">
+                <span class="error"></span>
+                <br><br>
+                E-mail: *<input type="text" name="email" id="email">
+                <span class="error"></span>
+                <br><br>
+                Comment: <textarea name="comment" rows="5" cols="40" id="comment"></textarea>
+                <br><br>
+                <div class="theend">
+                    <p id="RF"><span class="error">* Required Fields</span></p>
+                    <input class="button" type="submit" name="submit" value="Submit">  
+                </div>
+            </form>
+        </div>
+        <footer>
+            <div class="footer-description">
+                <div class="certific">
+                    <img src="pics/ISO.png" alt="ISO">
+                    <img src="pics/svan.png" alt="Svan">
+                </div>
+                <h3>Lorem ipsum dolor sit.</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos quam nam porro labore magnam, architecto eligendi delectus quaerat vitae vero veniam. Ut deserunt voluptatum amet modi sed sunt, adipisci tempora quos aliquam architecto consequuntur necessitatibus delectus. Quisquam blanditiis ipsam repellendus.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <a href="kontakt.php" class="contact-button">Here!</a>
+            </div>
+            <div class="footer-policy">
+                <a href="#">Integrtity policy</a>
+            </div>    
+        </footer>
+    </div> 
+</div>
+</body>
+</html>
+<script>
+if (window.matchMedia("(max-width: 1000px)").matches){
+    document.getElementById("header").style.left = "-60%";
+    document.getElementById("hamburger_button").setAttribute("class", "shown");
+    document.getElementById("x_button").setAttribute("class", "hidden");
+}else{
+    document.getElementById("content").style.marginLeft = "25%";
+}
+
+function sb_open() {
+    document.getElementById("hamburger_button").setAttribute("class", "hidden");
+    document.getElementById("x_button").setAttribute("class", "shown");
+    document.getElementById("header").style.left = "0%";
+    document.getElementById("content").style.marginLeft = "25%";
+}
+
+function sb_close() {
+    document.getElementById("hamburger_button").setAttribute("class", "shown");
+    document.getElementById("x_button").setAttribute("class", "hidden");
+    document.getElementById("header").style.left = "-60%";
+    document.getElementById("content").style.marginLeft = "0%";
+}
+</script>
