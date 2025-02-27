@@ -88,7 +88,7 @@ p{
 #contentindex, #content{
     display: grid;
     grid-template-rows: 100vh auto 10vh;
-    margin-left: 25%; 
+    margin-left: 0%; 
     width: 100%;
 }
 
