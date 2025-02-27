@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="main">
-    <div id="contentindex" style="margin-left: 0%;">
+    <div id="contentindex">
         <div class="hero" style="background-image: url('pics/Forest.png');">
             <div class="shader">
                 <h1>Green Statistic AB</h1>
@@ -68,38 +68,3 @@
 </div>
 </body>
 </html>
-
-
-<script>
-if (window.matchMedia("(max-width: 1000px)").matches){
-    document.getElementById("header").style.left = "-60%";
-    document.getElementById("hamburger_button").setAttribute("class", "shown");
-    document.getElementById("x_button").setAttribute("class", "hidden");
-}else{
-    document.getElementById("contentindex").style.marginLeft = "25%";
-
-}
-function sb_open() {
-    
-  document.getElementById("hamburger_button").setAttribute("class", "hidden");
-  document.getElementById("x_button").setAttribute("class", "shown");
-
-
-  document.getElementById("header").style.left = "0%";
-  document.getElementById("contentindex").style.marginLeft = "25%";
-    
-  
-}
-
-function sb_close() {
-    
-  document.getElementById("hamburger_button").setAttribute("class", "shown");
-  document.getElementById("x_button").setAttribute("class", "hidden");
-
- document.getElementById("header").style.left = "-60%";
- document.getElementById("contentindex").style.marginLeft = "0%";
-    
-}
-
-
-    </script>

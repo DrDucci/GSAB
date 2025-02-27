@@ -85,14 +85,11 @@ p{
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-#contentindex, #content{
+#contentindex{
     display: grid;
     grid-template-rows: 100vh auto 10vh;
     margin-left: 0%; 
     width: 100%;
-}
-
-#contentindex{
     grid-template-columns:100%;
     grid-template-areas: 
     "hero"
@@ -101,6 +98,10 @@ p{
 }
 
 #content{
+    display: grid;
+    grid-template-rows: 100vh auto 10vh;
+    margin-left: 0%; 
+    width: 100%;
     grid-template-columns: 100%;
     grid-template-areas: 
     "hero"
