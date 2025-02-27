@@ -3,8 +3,8 @@
         --background: #716262;
         --primary: #5ba96d;
         --secondary: #a2cec9;
-        --accent: #82b8be;
-        --sidebar-gb: #000000;
+        --accent: hsl(0, 0%, 93%);
+        --sidebar-bg: #c9c9c9;
         --icon-color: #ffffff;
 
 
@@ -20,6 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: red dotted 1px;
 }
 
 a{
@@ -87,7 +88,7 @@ p{
 #contentindex, #content{
     display: grid;
     grid-template-rows: 100vh auto 10vh;
-    margin-left: 25%; 
+    margin-left: 0%; 
     width: 100%;
 }
 
@@ -120,6 +121,7 @@ p{
     display: flex;
     flex-direction: column;
     row-gap: 3vh;
+    z-index: 1;
 
     height: 100%;
     width: 25%;
@@ -128,7 +130,7 @@ p{
     border-color: white;
     border-right-color: gray;
     background-color: var(--sidebar-bg);
-
+    
 }
 
 #sidebar #logo img{
