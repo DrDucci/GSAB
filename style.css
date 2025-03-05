@@ -90,21 +90,9 @@ p{
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-#contentindex{
-    display: grid;
-    grid-template-rows: 100vh auto 10vh;
-    margin-left: 0%; 
-    width: 100%;
-    grid-template-columns:100%;
-    grid-template-areas: 
-    "hero"
-    "central"
-    "footer";
-}
-
 #content{
     display: grid;
-    grid-template-rows: 100vh auto 10vh;
+    grid-template-rows: 40vh auto 10vh;
     margin-left: 0%; 
     width: 100%;
     grid-template-columns: 100%;
@@ -114,153 +102,21 @@ p{
     "footer";
 }
 
-/* -------------------------------------------------------------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----------------------------------------------------------------------------- */
 
-#header{
-    position: absolute;
-    width:25%;
-    height:100vh;
-}
 
-#sidebar{
-    position: fixed;
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#hero{
     display: flex;
     flex-direction: column;
-    row-gap: 3vh;
-    z-index: 1;
-
-    height: 100%;
-    width: 25%;
-
-    border-style: solid;
-    border-color: white;
-    border-right-color: gray;
-    background-color: var(--sidebar-bg);
-    
-}
-
-#sidebar #logo img{
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 100%;
-    height: fit-content;
-}
-
-#sidebar .button-item{
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
-    line-height: 40px;
-     
-    transition: all 0.2s ease;
-   
-    margin-left: 2vw;
-    margin-right: 2vw;
 
-    padding: 30px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 4dvh;
-    font-family: var(--header-font);
-    font-weight: 700;
-}
-
-.button-item:hover{
-    background-color: #aaa;
-    color: #000;
-}
-
-.button-item:link-first-child{
-    border-left: none;
-}
-
-hr{
-    margin:0px;
-    color:blue;
-    margin-left: 2vw;
-    margin-right: 2vw;
-}
-
-.social{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    height: 10%;
-}
-
-.social a{
-    display: flex;
-    justify-content: center;
-}
-
-.social img{
-    width: 40%;
-    height: fit-content;
-    border-radius: 25%;
-    transition: width 0.5s;
-}
-
-.social img:hover{
-    width: 50%;
-}
-
-/* ------------------------------------------ */
-
-.hidden{
-    display: none;
-}
-
-.shown {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    left: 0px;
-    top: 20px;
-}
-#x_button, #hamburger_button{
-    position: fixed;
-    width: 40px;
-    height: 40px;
-
-    border-style: none;
-    outline: gray 2px solid;
-    border-style: none;
-    background-color: white;
-    border-top-right-radius: 30%;
-    border-bottom-right-radius: 30%;
-
-}
-#x_button{
-    left: 25%;
-    color: var(--sidebar-bg); 
-    background-color: var(--icon-color);
-    border: none;
-    font-size: 4dvh;
-}
-
-#hamburger_button{
-    left: 0%;
-    color: var(--sidebar-bg); 
-    background-color: var(--icon-color);
-    border: none;
-
-    font-size: 3dvh;
-}
-
-/* --------------------------------------------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---------------------------------------------------------------------------------------------- */
-
-.hero{
     grid-area: hero;
 
     background-color: var(--primary);
     background-repeat: no-repeat;
     background-size: cover;
-    
-    margin-bottom: 20vh;
 }
 
 .shader{
@@ -337,6 +193,7 @@ hr{
     flex-direction: row;
     align-items: center;
     gap: 50px;
+    overflow-x: auto;
    
 }
 
@@ -381,7 +238,6 @@ hr{
 
 .search {
     width: 100%;
-    position: relative;
     display: flex;
   }
   
@@ -414,9 +270,12 @@ hr{
   
   .wrap{
     width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  }
+
+  .menubuttons{
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
   }
 
 
@@ -1197,7 +1056,7 @@ footer {
 #portfolio p {
     font-size: 2dvh;
     line-height: 1.6;
-    color: #333;
+    color: #ffffff;
 }
 
 @media screen and (max-width: 1000px) {
