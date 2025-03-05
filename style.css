@@ -30,6 +30,11 @@ a{
 img{
     border-radius: 20px;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -109,7 +114,7 @@ p{
     "footer";
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* -------------------------------------------------------------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX----------------------------------------------------------------------------- */
 
 #header{
     position: absolute;
@@ -246,7 +251,7 @@ hr{
     font-size: 3dvh;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* --------------------------------------------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---------------------------------------------------------------------------------------------- */
 
 .hero{
     grid-area: hero;
@@ -328,7 +333,8 @@ hr{
 
 .actor-carousel {
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    flex-direction: row;
     align-items: center;
     gap: 50px;
    
@@ -360,6 +366,7 @@ hr{
     justify-content: center;
     align-items: center;
     background-color: gray;
+    object-fit: cover;
 }
 
 .actor-card img {
@@ -535,18 +542,6 @@ img[alt="partner3"]{
     display: flex;
     flex-direction: column;
     padding-left: 5%;
-}
-
-.portfolio-images{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 5%;
-}
-
-.portfolio-images img{
-    width:70%;
 }
 
 /* ------------------------------------------ */
@@ -868,37 +863,53 @@ PORTFOLIO-----------------------------------------------------------------------
     grid-area: central;
 }
 
-#portfolio div{
+.focus-overlay{
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(180deg, transparent 0, transparent 65%, rgba(0, 0, 0, .35) 83.5%, rgba(0, 0, 0, .75));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.focus{
     display: flex;
-    flex-direction: row;
+    justify-content:right;
+
+    padding-top: 30vh;
+
+    background-image: url(pics/WINNIEBG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.infocontainer{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+
+    margin-bottom: 15px;
+}
+
+.infocontainer div{
+    display: flex;
     justify-content: space-evenly;
-    gap: 2vh;
+    flex-direction: row;
+    padding-bottom: 0;
+}
 
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-
-    background-color: white;
+.infocontainer img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 #portfolio div div{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    
-    padding-top: 0;
-    width: 50%;
+    background-color: transparent;
 }
 
-#portfolio div img{
-    display: flex;
-    width: 55%;
-    height: fit-content;
-    justify-self: center;
-    align-self: center;
-}
+.actor-carousel{
 
+}
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ 
 POLICY------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -1175,28 +1186,6 @@ footer {
     gap: 5vh;
     padding: 5vh 10%;
     background-color: var(--background);
-}
-
-#portfolio div {
-    display: flex;
-    align-items: center;
-    gap: 5%;
-    background-color: white;
-    padding: 5vh;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#portfolio img {
-    width: 45%;
-    border-radius: 20px;
-}
-
-#portfolio div div {
-    flex: 1;
-    padding: 0;
-    background-color: transparent;
-    box-shadow: none;
 }
 
 #portfolio h2 {
