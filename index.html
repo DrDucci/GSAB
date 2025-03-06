@@ -12,7 +12,7 @@
 <body>
 <div class="main">
     <div id="contentindex">
-        <div class="hero" style="background-image: url('pics/Forest.png');">
+        <div class="hero" style="background-image: url('pics/herobild.jpeg');">
             <div class="shader">
                 <h1>Green Statistic AB</h1>
                 <h4>The green way forward</h4>
@@ -20,7 +20,8 @@
         </div>
 
         <div class="central">
-            <div class="wrap">
+
+            <div class="search-container">
                 <div class="search">
                     <input type="text" class="searchTerm" placeholder="Search...">
                     <button type="submit" class="searchButton">
@@ -28,43 +29,81 @@
                     </button>
                 </div>
             </div>
-            <div class="movie-carousel">
-                <div class="carousel-container">
-                    <div class="carousel-track">
-                        <div class="movie-card"></div>
-                        <div class="movie-card"></div>
-                        <div class="movie-card"></div>
-                        <div class="movie-card"></div>
-                        <div class="movie-card"></div>
-                    </div>
-                    <div class="carousel-track">
-                        <div class="movie-card"></div>
-                        <div class="movie-card"></div>
-                        <div class="movie-card"></div>
-                        <div class="movie-card"></div>
-                        <div class="movie-card"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="actor-carousel">
-                <div class="actor-carousel-container">
-                    <div class="actor-carousel-track">
-                        <div class="actor-card"><img src=""></div>
-                        <div class="actor-card"><img src=""></div>
-                        <div class="actor-card"><img src="" ></div>
-                        <div class="actor-card"><img src="" ></div>
-                        <div class="actor-card"><img src=""></div>
-                    </div>
-                    <div class="actor-carousel-track">
-                        <div class="actor-card"><img src="" ></div>
-                        <div class="actor-card"><img src="" ></div>
-                        <div class="actor-card"><img src=""></div>
-                        <div class="actor-card"><img src="" ></div>
-                        <div class="actor-card"><img src="" ></div>
-                    </div>
-                </div>
-            </div>
+            
+<div class="slideshow-container" id="movie-carousel">
+    <div class="mySlides movie-slide fade">
+        <div class="slide-image"><img src="pics/shawshank.png.jpeg"></div>
+    </div>
+    <div class="mySlides movie-slide fade">
+        <div class="slide-image"><img src="pics/godfather.png.webp"></div>
+    </div>
+    <div class="mySlides movie-slide fade">
+        <div class="slide-image"><img src="pics/dark-knight.png.jpeg"></div>
+    </div>
+    <button class="prev" onclick="plusSlides(-1, 'movie')">&#10094;</button>
+    <button class="next" onclick="plusSlides(1, 'movie')">&#10095;</button>
 </div>
+
+<div class="slideshow-container" id="actor-carousel">
+    <div class="mySlides actor-slide fade">
+        <div class="actor-image"><img src="pics/jack-nicholson.jpeg"></div>
+        <div class="actor-image"><img src="pics/marlon-brando.jpeg"></div>
+    </div>
+    <div class="mySlides actor-slide fade">
+        <div class="actor-image"><img src="pics/robert-deniro.jpeg"></div>
+        <div class="actor-image"><img src="pics/al-pachino.jpeg"></div>
+    </div>
+    <div class="mySlides actor-slide fade">
+        <div class="actor-image"><img src="pics/daniel-daylewis.jpeg"></div>
+        <div class="actor-image"><img src="pics/dustin-hoffman.jpeg"></div>
+    </div>
+    <button class="prev" onclick="plusSlides(-1, 'actor')">&#10094;</button>
+    <button class="next" onclick="plusSlides(1, 'actor')">&#10095;</button>
+</div>
+
+            <footer>
+                <div class="footer-description">
+                    <div class="certific">
+                        <img src="pics/ISO.png" alt="ISO">
+                        <img src="pics/svan.png" alt="Svan">
+                    </div>
+                    <h3>Lorem ipsum dolor sit.</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos quam nam porro labore magnam, architecto eligendi delectus quaerat vitae vero veniam. Ut deserunt voluptatum amet modi sed sunt, adipisci tempora quos aliquam architecto consequuntur necessitatibus delectus. Quisquam blanditiis ipsam repellendus.</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <a href="kontakt.php" class="contact-button">Here!</a>
+                </div>
+                <div class="footer-policy">
+                    <a href="#">Integrtity policy</a>
+                </div>    
+            </footer> 
+</div> 
+
+<script>
+let slideIndexes = {
+    movie: 1,
+    actor: 1
+};
+
+showSlides(1, "movie");
+showSlides(1, "actor");
+
+function plusSlides(n, carousel) {
+    showSlides(slideIndexes[carousel] += n, carousel);
+}
+
+function showSlides(n, carousel) {
+    let slides = document.getElementsByClassName(carousel + "-slide");
+    if (n > slides.length) { slideIndexes[carousel] = 1; }
+    if (n < 1) { slideIndexes[carousel] = slides.length; }
+    
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndexes[carousel] - 1].style.display = "block";
+}
+
+</script>
 </body>
 </html>
