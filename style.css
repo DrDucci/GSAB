@@ -1,6 +1,6 @@
 :root{
     /* https://www.realtimecolors.com/?colors=18100f-faf7f7-8d544b-b5cd88-85ac7c&fonts=Poppins-Poppins */
-        --background: #716262;
+        --background: #000000;
         --primary: #5ba96d;
         --secondary: #a2cec9;
         --accent: hsl(0, 0%, 93%);
@@ -271,7 +271,7 @@ hr{
 }
 
 .shader h1, .shader h4{
-    color: var(--background);
+    color: #0b752b;
     --text-shadow: 5px 2px 4px var(--text);
 }
 
@@ -289,94 +289,121 @@ hr{
 
 /* Film karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-.movie-carousel {
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1300px;
+  height: 600px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
     display: flex;
     align-items: center;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 1300px;
+    height: 600px;
 }
-
-.carousel-container {
-    overflow: hidden;
-    width: 150%;
-}
-
-.carousel-track {
+.slide-image {
+    height: 600px;
+    flex: 1;
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
 }
+.slide-image img {
+    width: 700px;
+    height: 600px;
+    align-items: left;
+    justify-content: left;
 
-.movie-card {
-    width: 250px;
-    height: 350px;
-    background-color: gray;
-    margin: 15px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-.carousel-btn {
-    background-color: black;
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 /* Actor karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-.actor-carousel {
+.actor-slide {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-   
-}
-
-.actor-carousel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-}
-
-.actor-carousel-track {
-    display: flex;
-    gap: 50px;
+    flex-direction: row;
     justify-content: center;
-
+    align-items: center;
+    width: 1300px;
+    height: 600px;
+    gap: 300px;
 }
-
-.actor-card {
-    width: 200px;
-    height: 200px;
-    border-top-left-radius: 50% 50%; 
-    border-top-right-radius: 50% 50%; 
-    border-bottom-right-radius: 50% 50%; 
-    border-bottom-left-radius: 50% 50%; 
+.actor-image {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: gray;
+    border-radius: 10px;
 }
-
-.actor-card img {
+.actor-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  
+    border-radius: 10px;
 }
+
 
 /* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 
-.search {
-    width: 100%;
-    position: relative;
+.search-container {
     display: flex;
-  }
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+    padding: 20px 0; 
+}
+.search {
+    width: 100%; 
+    max-width: 600px; 
+    display: flex;
+}
+
   
   .searchTerm {
     width: 150%;
@@ -387,6 +414,7 @@ hr{
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #979999;
+   
   }
   
   .searchTerm:focus{
@@ -406,10 +434,14 @@ hr{
   }
   
   .wrap{
-    width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    height: 100%; 
+    width: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
 
@@ -576,8 +608,8 @@ img[alt="partner3"]{
     width: 25%;
     height: 5vh;
 
-    background-color: var(--background);
-    color: black;
+    background-color: #51b951;
+    color: green;
     font-size: 1.75dvh;
     font-family: var(--header-font);
     font-weight: 800;
