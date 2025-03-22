@@ -1,6 +1,6 @@
 :root{
     /* https://www.realtimecolors.com/?colors=18100f-faf7f7-8d544b-b5cd88-85ac7c&fonts=Poppins-Poppins */
-        --background: #000000;
+        --background: #ad7446;
         --primary: #5ba96d;
         --secondary: #a2cec9;
         --accent: hsl(0, 0%, 93%);
@@ -93,12 +93,13 @@ p{
 
 #content{
     display: grid;
-    grid-template-rows: 40vh auto 10vh;
+    grid-template-rows: auto 15vh auto 10vh;
     margin-left: 0%; 
     width: 100%;
     grid-template-columns: 100%;
     grid-template-areas: 
     "hero"
+    "search"
     "central"
     "footer";
 }
@@ -106,7 +107,7 @@ p{
 /* Central------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 
-.central{
+#central{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,6 +115,7 @@ p{
     row-gap: 20vh;
 
     height: 100%;
+    overflow: hidden;
 
     background-color:var(--background);
 }
@@ -151,8 +153,8 @@ p{
 
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.356) ;
 
+    background-color: rgba(0, 0, 0, 0.356) ;
 }
 
 .shader h1, .shader h4{
@@ -164,13 +166,69 @@ p{
     font-size: 8dvh;
     font-weight: 700;
     padding: 0.5rem;
+    margin-top: 10vh;
 }
 
 .shader h4{
     font-size: 5dvh;
     font-weight: 600;
     padding: 0.5rem;
+    margin-bottom: 10vh;
 }
+
+/* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+
+    grid-area: search;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+  
+  .searchTerm {
+    width: 150%;
+    border: 3px solid #979999;
+    border-right: none;
+    padding: 5px;
+    height: 60px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #979999;
+   
+  }
+  
+  .searchTerm:focus{
+    color: #000000;
+  }
+  
+  .searchButton {
+    width: 100px;
+    height: 60px;
+    border: 1px solid #979999;
+    background: #979999;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .menubuttons{
+    display: flex;
+    flex-direction: row;
+    gap: 15vw;
+  }
 
 /* Film karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
 
@@ -254,7 +312,7 @@ p{
     flex-direction: row;
     align-items: center;
     gap: 50px;
-    overflow-x: auto;
+    overflow-x: visible;
    
 }
 
@@ -291,68 +349,8 @@ p{
     border-radius: 10px;
 }
 
-
-/* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
-
-
-.search-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    width: 100%; 
-    padding: 20px 0; 
-}
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
-}
-
-  
-  .searchTerm {
-    width: 150%;
-    border: 3px solid #979999;
-    border-right: none;
-    padding: 5px;
-    height: 60px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #979999;
-   
-  }
-  
-  .searchTerm:focus{
-    color: #000000;
-  }
-  
-  .searchButton {
-    width: 100px;
-    height: 60px;
-    border: 1px solid #979999;
-    background: #979999;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  .wrap{
-    width: 80%;
-  }
-
-  .menubuttons{
-    display: flex;
-    flex-direction: row;
-    gap: 5vw;
-  }
-
-
-
-
-
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Footer------------------------------------------------------------------------------------------------------------------------------------------------ */
+
 
 * {box-sizing:border-box}
 
