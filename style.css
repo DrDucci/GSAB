@@ -90,6 +90,7 @@ p{
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
+
 #content{
     display: grid;
     grid-template-rows: 40vh auto 10vh;
@@ -102,9 +103,32 @@ p{
     "footer";
 }
 
+/* Central------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+.central{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: central;
+    row-gap: 20vh;
+
+    height: 100%;
+
+    background-color:var(--background);
+}
+
+.central div{
+    overflow: hidden;
+}
+
+.central h2{
+    font-size: 5dvh;
+    padding-bottom: 5vh;
+}
+
+/* HERO------------------------------------------------------------------------------------------------------------------------------------------------ */
+
 
 #hero{
     display: flex;
@@ -148,7 +172,54 @@ p{
     padding: 0.5rem;
 }
 
+/* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.search {
+    width: 100%;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 150%;
+    border: 3px solid #979999;
+    border-right: none;
+    padding: 5px;
+    height: 60px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #979999;
+  }
+  
+  .searchTerm:focus{
+    color: #000000;
+  }
+  
+  .searchButton {
+    width: 100px;
+    height: 60px;
+    border: 1px solid #979999;
+    background: #979999;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .wrap{
+    width: 80%;
+  }
+
+  .menubuttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5vw;
+  }
+
 /* Film karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
 
 .movie-carousel {
     display: flex;
@@ -233,262 +304,8 @@ p{
   
 }
 
-/* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Footer------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-
-.search {
-    width: 100%;
-    display: flex;
-  }
-  
-  .searchTerm {
-    width: 150%;
-    border: 3px solid #979999;
-    border-right: none;
-    padding: 5px;
-    height: 60px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #979999;
-  }
-  
-  .searchTerm:focus{
-    color: #000000;
-  }
-  
-  .searchButton {
-    width: 100px;
-    height: 60px;
-    border: 1px solid #979999;
-    background: #979999;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  .wrap{
-    width: 80%;
-  }
-
-  .menubuttons{
-    display: flex;
-    flex-direction: row;
-    gap: 5vw;
-  }
-
-
-
-
-
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
-
-.central{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    grid-area: central;
-    row-gap: 20vh;
-
-    height: 100%;
-
-    background-color:var(--background);
-}
-
-.central div{
-    overflow: hidden;
-
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.central h2{
-    font-size: 5dvh;
-    padding-bottom: 5vh;
-}
-
-/* ------------------------------------------ */
-
-.about-us{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    background-color: white;
-    padding: 2vh;
-}
-
-.about-us p{
-    padding-top: 5vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
-
-    text-align: center;
-}
-
-.about-us img{
-    width: 85%;
-    margin: 5%;
-}
-
-/* ------------------------------------------ */
-
-.partners{
-    display: flex;
-    flex-direction: row;
-    column-gap: 2.5%;
-    
-    overflow: hidden;
-
-    background-color: white;
-    padding: 2vh;
-}
-
-.part-text{
-    padding-left: 5vw;
-    padding-top: 3vh;
-
-    width: 60%;
-}
-
-/* ------------------------------------------ */
-
-.partner-images{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    row-gap: 5vh;
-
-    width: 40%;
-}
-
-img[alt="partner1"]{
-    width: 100%;
-} 
-
-img[alt="partner2"]{
-    width: 80%;
-}
-
-img[alt="partner3"]{
-    width: 80%;
-}
-
-/* ------------------------------------------ */
-
-.mini-portfolio{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;    
-
-    background-color: white;
-    padding: 5vh;
-}
-
-.texmex{
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.texmex img{
-    height: max-content;
-    width: 45%;
-}
-
-.tex{
-    display: flex;
-    flex-direction: column;
-    padding-left: 5%;
-}
-
-/* ------------------------------------------ */
-
-.mini-contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    border-radius: 20px;
-    width: 50vw;
-
-    background-color: white;
-    padding: 5vh;
-}
-
-.mini-contact p{
-    padding-bottom: 5vh;
-}
-
-.mini-contact a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 20px;
-    width: 25%;
-    height: 5vh;
-
-    background-color: var(--background);
-    color: black;
-    font-size: 1.75dvh;
-    font-family: var(--header-font);
-    font-weight: 800;
-}
-
-.mini-contact a:hover{
-    background-color: #468a46;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
-
-.blog{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    margin-left:5vh;
-    padding-bottom: 1vh;
-    height:100%;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-
-    grid-area: blog;
-    overflow: hidden;
-
-    background-color: var(--background);
-}
-
-.blog-content{
-    display: flex;
-    flex-direction: column;
-    row-gap: 2vh;
-    margin: 1vw;
-}
-
-.blog-content h3{
-    font-weight: 800;
-    font-size: 3dvh;
-}
-
-.blog-content h4, .blog-content p{
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    word-spacing: -0.04em;
-    font-size: 2dvh;
-}
-
-.blog-content p{
-    font-size: 2dvh;
-}
-
-.blog-content img{
-    width: 100%;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 footer{
     display: grid;
