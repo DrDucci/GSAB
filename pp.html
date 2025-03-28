@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -49,39 +50,9 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam veritatis enim optio blanditiis unde repudiandae quidem dicta consequuntur animi cupiditate dolores reiciendis esse beatae minima quasi, excepturi consectetur amet nulla accusamus libero assumenda provident? Nisi tenetur asperiores illum commodi impedit suscipit itaque amet ipsum? Doloribus, non consequuntur? Veniam, perspiciatis odit!</p>
             </div>
 
-            <div>
-                
-            </div>
-
-            <div class="actor-carousel">
-                <div>
-                    <img class="actor-card" src="pics/TYLER.png" alt="actor">
-                    <p>TYLER</p>
-                </div>
-                <div>
-                    <img class="actor-card" src="pics/TYLER.png" alt="actor">
-                    <p>TYLER</p>
-                </div>
-                <div>
-                    <img class="actor-card" src="pics/TYLER.png" alt="actor">
-                    <p>TYLER</p>
-                </div>
-                <div>
-                    <img class="actor-card" src="pics/TYLER.png" alt="actor">
-                    <p>TYLER</p>
-                </div>
-                <div>
-                    <img class="actor-card" src="pics/TYLER.png" alt="actor">
-                    <p>TYLER</p>
-                </div>
-                <div>
-                    <img class="actor-card" src="pics/TYLER.png" alt="actor">
-                    <p>TYLER</p>
-                </div>
-                <div>
-                    <img class="actor-card" src="pics/TYLER.png" alt="actor">
-                    <p>TYLER</p>
-                </div>
+            <div class="stats">
+                <div class="statsinfo"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nulla ullam, perspiciatis non, necessitatibus deserunt ab excepturi laborum nisi, perferendis eius corporis minima. Magni, autem.</p></div>
+                <canvas id="barChart"></canvas>
             </div>
         </div>
         <footer>
@@ -103,5 +74,45 @@
         </footer>
     </div> 
 </div>
+<script>
+const ctx = document.getElementById('barChart').getContext('2d');
+
+const data = {
+    labels: ['Kategori 1', 'Kategori 2', 'Kategori 3'],
+    datasets: [
+        {
+            label: 'X-värde',
+            data: [10, 20, 50],
+            backgroundColor: 'rgba(136, 132, 216, 0.6)'
+        },
+    ]
+};
+
+new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: 'white' },
+                        grid: { color: 'rgba(255, 255, 255, 0.2)' }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: 'white' },
+                        grid: { color: 'rgba(255, 255, 255, 0.2)' }
+                    }
+                }
+            }
+        });
+</script>
 </body>
 </html>
