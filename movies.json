@@ -83,1198 +83,1675 @@
     "title": "Fight Club",
     "year": 1999
   },
-    {
-        "id": 13,
-        "title": "Inception",
-        "year": 2010
-    },
-    {
-        "id": 14,
-        "title": "The Lord of the Rings: The Two Towers",
-        "year": 2002
-    },
-    {
-        "id": 15,
-        "title": "Star Wars: Episode V - The Empire Strikes Back",
-        "year": 1980
-    },
-    {
-        "id": 16,
-        "title": "The Matrix",
-        "year": 1999
-    },
-    {
-        "id": 17,
-        "title": "Goodfellas",
-        "year": 1990
-    },
-    {
-        "id": 18,
-        "title": "One Flew Over the Cuckoo's Nest",
-        "year": 1975
-    },
-    {
-        "id": 19,
-        "title": "Se7en",
-        "year": 1995
-    },
-    {
-        "id": 20,
-        "title": "Seven Samurai",
-        "year": 1954
-    },
-    {
-        "id": 21,
-        "title": "It's a Wonderful Life",
-        "year": 1946
-    },
-    {
-        "id": 22,
-        "title": "The Silence of the Lambs",
-        "year": 1991
-    },
-    {
-        "id": 23,
-        "title": "Saving Private Ryan",
-        "year": 1998
-    },
-    {
-        "id": 24,
-        "title": "City of God",
-        "year": 2002
-    },
-    {
-        "id": 25,
-        "title": "Interstellar",
-        "year": 2014
-    },
-    {
-        "id": 26,
-        "title": "Life Is Beautiful",
-        "year": 1997
-    },
-    {
-        "id": 27,
-        "title": "The Green Mile",
-        "year": 1999
-    },
-    {
-        "id": 28,
-        "title": "Star Wars: Episode IV - A New Hope",
-        "year": 1977
-    },
-    {
-        "id": 29,
-        "title": "Terminator 2: Judgment Day",
-        "year": 1991
-    },
-    {
-        "id": 30,
-        "title": "Back to the Future",
-        "year": 1985
-    },
-    {
-        "id": 31,
-        "title": "Spirited Away",
-        "year": 2001
-    },
-    {
-        "id": 32,
-        "title": "The Pianist",
-        "year": 2002
-    },
-    {
-        "id": 33,
-        "title": "Parasite",
-        "year": 2019
-    },
-    {
-        "id": 34,
-        "title": "The Departed",
-        "year": 2006
-    },
-    {
-        "id": 35,
-        "title": "The Lion King",
-        "year": 1994
-    },
-    {
-        "id": 36,
-        "title": "Gladiator",
-        "year": 2000
-    },
-    {
-        "id": 37,
-        "title": "American History X",
-        "year": 1998
-    },
-    {
-        "id": 38,
-        "title": "The Usual Suspects",
-        "year": 1995
-    },
-    {
-        "id": 39,
-        "title": "The Prestige",
-        "year": 2006
-    },
-    {
-        "id": 40,
-        "title": "Casablanca",
-        "year": 1942
-    },
-    {
-        "id": 41,
-        "title": "Whiplash",
-        "year": 2014
-    },
-    {
-        "id": 42,
-        "title": "Grave of the Fireflies",
-        "year": 1988
-    },
-    {
-        "id": 43,
-        "title": "Harakiri",
-        "year": 1962
-    },
-    {
-        "id": 44,
-        "title": "The Intouchables",
-        "year": 2011
-    },
-    {
-        "id": 45,
-        "title": "Modern Times",
-        "year": 1936
-    },
-    {
-        "id": 46,
-        "title": "Once Upon a Time in the West",
-        "year": 1968
-    },
-    {
-        "id": 47,
-        "title": "Cinema Paradiso",
-        "year": 1988
-    },
-    {
-        "id": 48,
-        "title": "Rear Window",
-        "year": 1954
-    },
-    {
-        "id": 49,
-        "title": "Alien",
-        "year": 1979
-    },
-    {
-        "id": 50,
-        "title": "City Lights",
-        "year": 1931
-    },
-    {
-        "id": 51,
-        "title": "Apocalypse Now",
-        "year": 1979
-    },
-    {
-        "id": 52,
-        "title": "Memento",
-        "year": 2000
-    },
-    {
-        "id": 53,
-        "title": "Django Unchained",
-        "year": 2012
-    },
-    {
-        "id": 54,
-        "title": "Raiders of the Lost Ark",
-        "year": 1981
-    },
-    {
-        "id": 55,
-        "title": "WALL·E",
-        "year": 2008
-    },
-    {
-        "id": 56,
-        "title": "The Lives of Others",
-        "year": 2006
-    },
-    {
-        "id": 57,
-        "title": "Sunset Blvd.",
-        "year": 1950
-    },
-    {
-        "id": 58,
-        "title": "Paths of Glory",
-        "year": 1957
-    },
-    {
-        "id": 59,
-        "title": "The Shining",
-        "year": 1980
-    },
-    {
-        "id": 60,
-        "title": "The Great Dictator",
-        "year": 1940
-    },
-    {
-        "id": 61,
-        "title": "Avengers: Infinity War",
-        "year": 2018
-    },
-    {
-        "id": 62,
-        "title": "Witness for the Prosecution",
-        "year": 1957
-    },
-    {
-        "id": 63,
-        "title": "Aliens",
-        "year": 1986
-    },
-    {
-        "id": 64,
-        "title": "American Beauty",
-        "year": 1999
-    },
-    {
-        "id": 65,
-        "title": "The Dark Knight Rises",
-        "year": 2012
-    },
-    {
-        "id": 66,
-        "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
-        "year": 1964
-    },
-    {
-        "id": 67,
-        "title": "Spider-Man: Into the Spider-Verse",
-        "year": 2018
-    },
-    {
-        "id": 68,
-        "title": "Joker",
-        "year": 2019
-    },
-    {
-        "id": 69,
-        "title": "Oldboy",
-        "year": 2003
-    },
-    {
-        "id": 70,
-        "title": "Amadeus",
-        "year": 1984
-    },
-    {
-        "id": 71,
-        "title": "Braveheart",
-        "year": 1995
-    },
-    {
-        "id": 72,
-        "title": "Toy Story",
-        "year": 1995
-    },
-    {
-        "id": 73,
-        "title": "Coco",
-        "year": 2017
-    },
-    {
-        "id": 74,
-        "title": "Das Boot",
-        "year": 1981
-    },
-    {
-        "id": 75,
-        "title": "Inglourious Basterds",
-        "year": 2009
-    },
-    {
-        "id": 76,
-        "title": "Princess Mononoke",
-        "year": 1997
-    },
-    {
-        "id": 77,
-        "title": "Once Upon a Time in America",
-        "year": 1984
-    },
-    {
-        "id": 78,
-        "title": "Avengers: Endgame",
-        "year": 2019
-    },
-    {
-        "id": 79,
-        "title": "Good Will Hunting",
-        "year": 1997
-    },
-    {
-        "id": 80,
-        "title": "Your Name.",
-        "year": 2016
-    },
-    {
-        "id": 81,
-        "title": "Requiem for a Dream",
-        "year": 2000
-    },
-    {
-        "id": 82,
-        "title": "Toy Story 3",
-        "year": 2010
-    },
-    {
-        "id": 83,
-        "title": "Singin' in the Rain",
-        "year": 1952
-    },
-    {
-        "id": 84,
-        "title": "3 Idiots",
-        "year": 2009
-    },
-    {
-        "id": 85,
-        "title": "2001: A Space Odyssey",
-        "year": 1968
-    },
-    {
-        "id": 86,
-        "title": "Capernaum",
-        "year": 2018
-    },
-    {
-        "id": 87,
-        "title": "Star Wars: Episode VI - Return of the Jedi",
-        "year": 1983
-    },
-    {
-        "id": 88,
-        "title": "Reservoir Dogs",
-        "year": 1992
-    },
-    {
-        "id": 89,
-        "title": "Like Stars on Earth",
-        "year": 2007
-    },
-    {
-        "id": 90,
-        "title": "The Hunt",
-        "year": 2012
-    },
-    {
-        "id": 91,
-        "title": "M",
-        "year": 1931
-    },
-    {
-        "id": 92,
-        "title": "Citizen Kane",
-        "year": 1941
-    },
-    {
-        "id": 93,
-        "title": "Vertigo",
-        "year": 1958
-    },
-    {
-        "id": 94,
-        "title": "North by Northwest",
-        "year": 1959
-    },
-    {
-        "id": 95,
-        "title": "The Apartment",
-        "year": 1960
-    },
-    {
-        "id": 96,
-        "title": "A Separation",
-        "year": 2011
-    },
-    {
-        "id": 97,
-        "title": "Amélie",
-        "year": 2001
-    },
-    {
-        "id": 98,
-        "title": "Lawrence of Arabia",
-        "year": 1962
-    },
-    {
-        "id": 99,
-        "title": "The Sting",
-        "year": 1973
-    },
+  {
+    "id": 13,
+    "bechdel": 0,
+    "rating": 8.7,
+    "title": "Inception",
+    "year": 2010
+  },
+  {
+    "id": 14,
+    "bechdel": 0,
+    "rating": 8.8,
+    "title": "The Lord of the Rings: The Two Towers",
+    "year": 2002
+  },
+  {
+    "id": 15,
+    "bechdel": 0,
+    "rating": 8.7,
+    "title": "Star Wars: Episode V - The Empire Strikes Back",
+    "year": 1980
+  },
+  {
+    "id": 16,
+    "bechdel": 1,
+    "rating": 8.7,
+    "title": "The Matrix",
+    "year": 1999
+  },
+  {
+    "id": 17,
+    "bechdel": 1,
+    "rating": 8.7,
+    "title": "Goodfellas",
+    "year": 1990
+  },
+  {
+    "id": 18,
+    "bechdel": 0,
+    "rating": 8.7,
+    "title": "One Flew Over the Cuckoo's Nest",
+    "year": 1975
+  },
+  {
+    "id": 19,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "Se7en",
+    "year": 1995
+  },
+  {
+    "id": 20,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "Seven Samurai",
+    "year": 1954
+  },
+  {
+    "id": 21,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "It's a Wonderful Life",
+    "year": 1946
+  },
+  {
+    "id": 22,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "The Silence of the Lambs",
+    "year": 1991
+  },
+  {
+    "id": 23,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "Saving Private Ryan",
+    "year": 1998
+  },
+  {
+    "id": 24,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "City of God",
+    "year": 2002
+  },
+  {
+    "id": 25,
+    "bechdel": 0,
+    "rating": 8.7,
+    "title": "Interstellar",
+    "year": 2014
+  },
+  {
+    "id": 26,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "Life Is Beautiful",
+    "year": 1997
+  },
+  {
+    "id": 27,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "The Green Mile",
+    "year": 1999
+  },
+  {
+    "id": 28,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "Star Wars: Episode IV - A New Hope",
+    "year": 1977
+  },
+  {
+    "id": 29,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "Terminator 2: Judgment Day",
+    "year": 1991
+  },
+  {
+    "id": 30,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "Back to the Future",
+    "year": 1985
+  },
+  {
+    "id": 31,
+    "bechdel": 1,
+    "rating": 8.6,
+    "title": "Spirited Away",
+    "year": 2001
+  },
+  {
+    "id": 32,
+    "bechdel": 1,
+    "rating": 8.5,
+    "title": "The Pianist",
+    "year": 2002
+  },
+  {
+    "id": 33,
+    "bechdel": 1,
+    "rating": 8.5,
+    "title": "Parasite",
+    "year": 2019
+  },
+  {
+    "id": 34,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "The Departed",
+    "year": 2006
+  },
+  {
+    "id": 35,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "The Lion King",
+    "year": 1994
+  },
+  {
+    "id": 36,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "Gladiator",
+    "year": 2000
+  },
+  {
+    "id": 37,
+    "bechdel": 1,
+    "rating": 8.5,
+    "title": "American History X",
+    "year": 1998
+  },
+  {
+    "id": 38,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "The Usual Suspects",
+    "year": 1995
+  },
+  {
+    "id": 39,
+    "bechdel": 1,
+    "rating": 8.5,
+    "title": "The Prestige",
+    "year": 2006
+  },
+  {
+    "id": 40,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "Casablanca",
+    "year": 1942
+  },
+  {
+    "id": 41,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "Whiplash",
+    "year": 2014
+  },
+  {
+    "id": 42,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "Grave of the Fireflies",
+    "year": 1988
+  },
+  {
+    "id": 43,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "Harakiri",
+    "year": 1962
+  },
+  {
+    "id": 44,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "The Intouchables",
+    "year": 2011
+  },
+  {
+    "id": 45,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "Modern Times",
+    "year": 1936
+  },
+  {
+    "id": 46,
+    "bechdel": 0,
+    "rating": 8.6,
+    "title": "Once Upon a Time in the West",
+    "year": 1968
+  },
+  {
+    "id": 47,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "Cinema Paradiso",
+    "year": 1988
+  },
+  {
+    "id": 48,
+    "bechdel": 1,
+    "rating": 8.5,
+    "title": "Rear Window",
+    "year": 1954
+  },
+  {
+    "id": 49,
+    "bechdel": 1,
+    "rating": 8.5,
+    "title": "Alien",
+    "year": 1979
+  },
+  {
+    "id": 50,
+    "bechdel": 1,
+    "rating": 8.5,
+    "title": "City Lights",
+    "year": 1931
+  },
+  {
+    "id": 51,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Apocalypse Now",
+    "year": 1979
+  },
+  {
+    "id": 52,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Memento",
+    "year": 2000
+  },
+  {
+    "id": 53,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Django Unchained",
+    "year": 2012
+  },
+  {
+    "id": 54,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Raiders of the Lost Ark",
+    "year": 1981
+  },
+  {
+    "id": 55,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "WALL·E",
+    "year": 2008
+  },
+  {
+    "id": 56,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "The Lives of Others",
+    "year": 2006
+  },
+  {
+    "id": 57,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "Sunset Blvd.",
+    "year": 1950
+  },
+  {
+    "id": 58,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Paths of Glory",
+    "year": 1957
+  },
+  {
+    "id": 59,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "The Shining",
+    "year": 1980
+  },
+  {
+    "id": 60,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "The Great Dictator",
+    "year": 1940
+  },
+  {
+    "id": 61,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "Avengers: Infinity War",
+    "year": 2018
+  },
+  {
+    "id": 62,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Witness for the Prosecution",
+    "year": 1957
+  },
+  {
+    "id": 63,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "Aliens",
+    "year": 1986
+  },
+  {
+    "id": 64,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "American Beauty",
+    "year": 1999
+  },
+  {
+    "id": 65,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "The Dark Knight Rises",
+    "year": 2012
+  },
+  {
+    "id": 66,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+    "year": 1964
+  },
+  {
+    "id": 67,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Spider-Man: Into the Spider-Verse",
+    "year": 2018
+  },
+  {
+    "id": 68,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "Joker",
+    "year": 2019
+  },
+  {
+    "id": 69,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Oldboy",
+    "year": 2003
+  },
+  {
+    "id": 70,
+    "bechdel": 1,
+    "rating": 8.3,
+    "title": "Amadeus",
+    "year": 1984
+  },
+  {
+    "id": 71,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Braveheart",
+    "year": 1995
+  },
+  {
+    "id": 72,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Toy Story",
+    "year": 1995
+  },
+  {
+    "id": 73,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Coco",
+    "year": 2017
+  },
+  {
+    "id": 74,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "Das Boot",
+    "year": 1981
+  },
+  {
+    "id": 75,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Inglourious Basterds",
+    "year": 2009
+  },
+  {
+    "id": 76,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "Princess Mononoke",
+    "year": 1997
+  },
+  {
+    "id": 77,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Once Upon a Time in America",
+    "year": 1984
+  },
+  {
+    "id": 78,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "Avengers: Endgame",
+    "year": 2019
+  },
+  {
+    "id": 79,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Good Will Hunting",
+    "year": 1997
+  },
+  {
+    "id": 80,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "Your Name.",
+    "year": 2016
+  },
+  {
+    "id": 81,
+    "bechdel": 1,
+    "rating": 8.3,
+    "title": "Requiem for a Dream",
+    "year": 2000
+  },
+  {
+    "id": 82,
+    "bechdel": 1,
+    "rating": 8.3,
+    "title": "Toy Story 3",
+    "year": 2010
+  },
+  {
+    "id": 83,
+    "bechdel": 1,
+    "rating": 8.3,
+    "title": "Singin' in the Rain",
+    "year": 1952
+  },
+  {
+    "id": 84,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "3 Idiots",
+    "year": 2009
+  },
+  {
+    "id": 85,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "2001: A Space Odyssey",
+    "year": 1968
+  },
+  {
+    "id": 86,
+    "bechdel": 1,
+    "rating": 8.4,
+    "title": "Capernaum",
+    "year": 2018
+  },
+  {
+    "id": 87,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Star Wars: Episode VI - Return of the Jedi",
+    "year": 1983
+  },
+  {
+    "id": 88,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Reservoir Dogs",
+    "year": 1992
+  },
+  {
+    "id": 89,
+    "bechdel": 1,
+    "rating": 8.3,
+    "title": "Like Stars on Earth",
+    "year": 2007
+  },
+  {
+    "id": 90,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "The Hunt",
+    "year": 2012
+  },
+  {
+    "id": 91,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "M",
+    "year": 1931
+  },
+  {
+    "id": 92,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Citizen Kane",
+    "year": 1941
+  },
+  {
+    "id": 93,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Vertigo",
+    "year": 1958
+  },
+  {
+    "id": 94,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "North by Northwest",
+    "year": 1959
+  },
+  {
+    "id": 95,
+    "bechdel": 1,
+    "rating": 8.3,
+    "title": "The Apartment",
+    "year": 1960
+  },
+  {
+    "id": 96,
+    "bechdel": 1,
+    "rating": 8.3,
+    "title": "A Separation",
+    "year": 2011
+  },
+  {
+    "id": 97,
+    "bechdel": 1,
+    "rating": 8.3,
+    "title": "Amélie",
+    "year": 2001
+  },
+  {
+    "id": 98,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Lawrence of Arabia",
+    "year": 1962
+  },
+  {
+    "id": 99,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "The Sting",
+    "year": 1973
+  },
 
-    {
-        "id": 100,
-        "title": "Metropolis",
-        "year": 1927
-    },
+  {
+    "id": 100,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "Metropolis",
+    "year": 1927
+  },
 
-        {
-            "id": 101,
-            "title": "The Great Escape",
-            "year": 1963
-        },
-        {
-            "id": 102,
-            "title": "The Elephant Man",
-            "year": 1980
-        },
-        {
-            "id": 103,
-            "title": "Rashomon",
-            "year": 1950
-        },
-        {
-            "id": 104,
-            "title": "The Seventh Seal",
-            "year": 1957
-        },
-        {
-            "id": 105,
-            "title": "Blade Runner",
-            "year": 1982
-        },
-        {
-            "id": 106,
-            "title": "Chinatown",
-            "year": 1974
-        },
-        {
-            "id": 107,
-            "title": "The Treasure of the Sierra Madre",
-            "year": 1948
-        },
-        {
-            "id": 108,
-            "title": "The Maltese Falcon",
-            "year": 1941
-        },
-        {
-            "id": 109,
-            "title": "Jurassic Park",
-            "year": 1993
-        },
-        {
-            "id": 110,
-            "title": "The Bridge on the River Kwai",
-            "year": 1957
-        },
-        {
-            "id": 111,
-            "title": "Gone with the Wind",
-            "year": 1939
-        },
-        {
-            "id": 112,
-            "title": "The Wizard of Oz",
-            "year": 1939
-        },
-        {
-            "id": 113,
-            "title": "The Third Man",
-            "year": 1949
-        },
-        {
-            "id": 114,
-            "title": "The Deer Hunter",
-            "year": 1978
-        },
-        {
-            "id": 115,
-            "title": "The Revenant",
-            "year": 2015
-        },
-        {
-            "id": 116,
-            "title": "Room",
-            "year": 2015
-        },
-        {
-            "id": 117,
-            "title": "The Big Lebowski",
-            "year": 1998
-        },
-        {
-            "id": 118,
-            "title": "The Grand Budapest Hotel",
-            "year": 2014
-        },
-        {
-            "id": 119,
-            "title": "The Terminator",
-            "year": 1984
-        },
-        {
-            "id": 120,
-            "title": "The Wages of Fear",
-            "year": 1953
-        },
-        {
-            "id": 121,
-            "title": "The Social Network",
-            "year": 2010
-        },
-        {
-            "id": 122,
-            "title": "The Exorcist",
-            "year": 1973
-        },
-        {
-            "id": 123,
-            "title": "The Grapes of Wrath",
-            "year": 1940
-        },
-        {
-            "id": 124,
-            "title": "The Best Years of Our Lives",
-            "year": 1946
-        },
-        {
-            "id": 125,
-            "title": "The Lion in Winter",
-            "year": 1968
-        },
-        {
-            "id": 126,
-            "title": "The Night of the Hunter",
-            "year": 1955
-        },
-        {
-            "id": 127,
-            "title": "The 400 Blows",
-            "year": 1959
-        },
-        {
-            "id": 128,
-            "title": "The Battle of Algiers",
-            "year": 1966
-        },
-        {
-            "id": 129,
-            "title": "The Passion of Joan of Arc",
-            "year": 1928
-        },
-        {
-            "id": 130,
-            "title": "The Kid",
-            "year": 1921
-        },
-        {
-            "id": 131,
-            "title": "The General",
-            "year": 1926
-        },
-        {
-            "id": 132,
-            "title": "The Gold Rush",
-            "year": 1925
-        },
-        {
-            "id": 133,
-            "title": "The Circus",
-            "year": 1928
-        },
-        {
-            "id": 134,
-            "title": "The Adventures of Robin Hood",
-            "year": 1938
-        },
-        {
-            "id": 135,
-            "title": "The Hustler",
-            "year": 1961
-        },
-        {
-            "id": 136,
-            "title": "The Killing",
-            "year": 1956
-        },
-        {
-            "id": 137,
-            "title": "The Man Who Shot Liberty Valance",
-            "year": 1962
-        },
-        {
-            "id": 138,
-            "title": "The Wild Bunch",
-            "year": 1969
-        },
-        {
-            "id": 139,
-            "title": "The French Connection",
-            "year": 1971
-        },
-        {
-            "id": 140,
-            "title": "The Conversation",
-            "year": 1974
-        },
-        {
-            "id": 141,
-            "title": "The Last Picture Show",
-            "year": 1971
-        },
-        {
-            "id": 142,
-            "title": "The Sting",
-            "year": 1973
-        },
-        {
-            "id": 143,
-            "title": "The Day the Earth Stood Still",
-            "year": 1951
-        },
-        {
-            "id": 144,
-            "title": "The Manchurian Candidate",
-            "year": 1962
-        },
-        {
-            "id": 145,
-            "title": "The Birds",
-            "year": 1963
-        },
-        {
-            "id": 146,
-            "title": "The Haunting",
-            "year": 1963
-        },
-        {
-            "id": 147,
-            "title": "The Innocents",
-            "year": 1961
-        },
-        {
-            "id": 148,
-            "title": "The Umbrellas of Cherbourg",
-            "year": 1964
-        },
-        {
-            "id": 149,
-            "title": "The Leopard",
-            "year": 1963
-        },
-        {
-            "id": 150,
-            "title": "The Red Shoes",
-            "year": 1948
-        },
-        {
-            "id": 151,
-            "title": "The Band Wagon",
-            "year": 1953
-        },
-        {
-            "id": 152,
-            "title": "The African Queen",
-            "year": 1951
-        },
-        {
-            "id": 153,
-            "title": "The Quiet Man",
-            "year": 1952
-        },
-        {
-            "id": 154,
-            "title": "The Searchers",
-            "year": 1956
-        },
-        {
-            "id": 155,
-            "title": "The Apu Trilogy",
-            "year": 1955
-        },
-        {
-            "id": 156,
-            "title": "The Human Condition",
-            "year": 1959
-        },
-        {
-            "id": 157,
-            "title": "The Music Room",
-            "year": 1958
-        },
-        {
-            "id": 158,
-            "title": "The Cranes Are Flying",
-            "year": 1957
-        },
-        {
-            "id": 159,
-            "title": "The Ballad of Narayama",
-            "year": 1958
-        },
-        {
-            "id": 160,
-            "title": "The Hidden Fortress",
-            "year": 1958
-        },
-        {
-            "id": 161,
-            "title": "The Housemaid",
-            "year": 1960
-        },
-        {
-            "id": 162,
-            "title": "The Hole",
-            "year": 1960
-        },
-        {
-            "id": 163,
-            "title": "The Virgin Spring",
-            "year": 1960
-        },
-        {
-            "id": 164,
-            "title": "The Exterminating Angel",
-            "year": 1962
-        },
-        {
-            "id": 165,
-            "title": "The Trial",
-            "year": 1962
-        },
-        {
-            "id": 166,
-            "title": "The Servant",
-            "year": 1963
-        },
-        {
-            "id": 167,
-            "title": "The Gospel According to St. Matthew",
-            "year": 1964
-        },
-        {
-            "id": 168,
-            "title": "The Battle of Algiers",
-            "year": 1966
-        },
-        {
-            "id": 169,
-            "title": "The Good, the Bad and the Ugly",
-            "year": 1966
-        },
-        {
-            "id": 170,
-            "title": "The Graduate",
-            "year": 1967
-        },
-        {
-            "id": 171,
-            "title": "The Lion in Winter",
-            "year": 1968
-        },
-        {
-            "id": 172,
-            "title": "The Wild Bunch",
-            "year": 1969
-        },
-        {
-            "id": 173,
-            "title": "The Conformist",
-            "year": 1970
-        },
-        {
-            "id": 174,
-            "title": "The Last Picture Show",
-            "year": 1971
-        },
-        {
-            "id": 175,
-            "title": "The Discreet Charm of the Bourgeoisie",
-            "year": 1972
-        },
-        {
-            "id": 176,
-            "title": "The Sting",
-            "year": 1973
-        },
-        {
-            "id": 177,
-            "title": "The Godfather Part II",
-            "year": 1974
-        },
-        {
-            "id": 178,
-            "title": "The Conversation",
-            "year": 1974
-        },
-        {
-            "id": 179,
-            "title": "The Mirror",
-            "year": 1975
-        },
-        {
-            "id": 180,
-            "title": "The Man Who Would Be King",
-            "year": 1975
-        },
-        {
-            "id": 181,
-            "title": "The Deer Hunter",
-            "year": 1978
-        },
-        {
-            "id": 182,
-            "title": "The Elephant Man",
-            "year": 1980
-        },
-        {
-            "id": 183,
-            "title": "The Shining",
-            "year": 1980
-        },
-        {
-            "id": 184,
-            "title": "The Thing",
-            "year": 1982
-        },
-        {
-            "id": 185,
-            "title": "The King of Comedy",
-            "year": 1982
-        },
-        {
-            "id": 186,
-            "title": "The Right Stuff",
-            "year": 1983
-        },
-        {
-            "id": 187,
-            "title": "The Killing Fields",
-            "year": 1984
-        },
-        {
-            "id": 188,
-            "title": "The Purple Rose of Cairo",
-            "year": 1985
-        },
-        {
-            "id": 189,
-            "title": "The Mission",
-            "year": 1986
-        },
-        {
-            "id": 190,
-            "title": "The Last Emperor",
-            "year": 1987
-        },
-        {
-            "id": 191,
-            "title": "The Accused",
-            "year": 1988
-        },
-        {
-            "id": 192,
-            "title": "The Cook, the Thief, His Wife & Her Lover",
-            "year": 1989
-        },
-        {
-            "id": 193,
-            "title": "The Grifters",
-            "year": 1990
-        },
-        {
-            "id": 194,
-            "title": "The Silence of the Lambs",
-            "year": 1991
-        },
-        {
-            "id": 195,
-            "title": "The Player",
-            "year": 1992
-        },
-        {
-            "id": 196,
-            "title": "The Fugitive",
-            "year": 1993
-        },
-        {
-            "id": 197,
-            "title": "The Shawshank Redemption",
-            "year": 1994
-        },
-        {
-            "id": 198,
-            "title": "The Usual Suspects",
-            "year": 1995
-        },
-        {
-            "id": 199,
-            "title": "The English Patient",
-            "year": 1996
-        },
-        {
-            "id": 200,
-            "title": "The Sweet Hereafter",
-            "year": 1997
-        },
-        {
-            "id": 201,
-            "title": "The Big Lebowski",
-            "year": 1998
-        },
-        {
-            "id": 202,
-            "title": "The Thin Red Line",
-            "year": 1998
-        },
-        {
-            "id": 203,
-            "title": "The Sixth Sense",
-            "year": 1999
-        },
-        {
-            "id": 204,
-            "title": "The Insider",
-            "year": 1999
-        },
-        {
-            "id": 205,
-            "title": "The Matrix",
-            "year": 1999
-        },
-        {
-            "id": 206,
-            "title": "The Straight Story",
-            "year": 1999
-        },
-        {
-            "id": 207,
-            "title": "The Virgin Suicides",
-            "year": 1999
-        },
-        {
-            "id": 208,
-            "title": "The Cell",
-            "year": 2000
-        },
-        {
-            "id": 209,
-            "title": "The Contender",
-            "year": 2000
-        },
-        {
-            "id": 210,
-            "title": "The Gift",
-            "year": 2000
-        },
-        {
-            "id": 211,
-            "title": "The Legend of Bagger Vance",
-            "year": 2000
-        },
-        {
-            "id": 212,
-            "title": "The Perfect Storm",
-            "year": 2000
-        },
-        {
-            "id": 213,
-            "title": "The Patriot",
-            "year": 2000
-        },
-        {
-            "id": 214,
-            "title": "The Pledge",
-            "year": 2001
-        },
-        {
-            "id": 215,
-            "title": "The Royal Tenenbaums",
-            "year": 2001
-        },
-        {
-            "id": 216,
-            "title": "The Shipping News",
-            "year": 2001
-        },
-        {
-            "id": 217,
-            "title": "The Others",
-            "year": 2001
-        },
-        {
-            "id": 218,
-            "title": "The Man Who Wasn't There",
-            "year": 2001
-        },
-        {
-            "id": 219,
-            "title": "The Majestic",
-            "year": 2001
-        },
-        {
-            "id": 220,
-            "title": "The Mothman Prophecies",
-            "year": 2002
-        },
-        {
-            "id": 221,
-            "title": "The Hours",
-            "year": 2002
-        },
-        {
-            "id": 222,
-            "title": "The Pianist",
-            "year": 2002
-        },
-        {
-            "id": 223,
-            "title": "The Quiet American",
-            "year": 2002
-        },
-        {
-            "id": 224,
-            "title": "The Ring",
-            "year": 2002
-        },
-        {
-            "id": 225,
-            "title": "The Son",
-            "year": 2002
-        },
-        {
-            "id": 226,
-            "title": "The Triplets of Belleville",
-            "year": 2003
-        },
-        {
-            "id": 227,
-            "title": "The Barbarian Invasions",
-            "year": 2003
-        },
-        {
-            "id": 228,
-            "title": "The Cooler",
-            "year": 2003
-        },
-        {
-            "id": 229,
-            "title": "The Station Agent",
-            "year": 2003
-        },
-        {
-            "id": 230,
-            "title": "The Dreamers",
-            "year": 2003
-        },
-        {
-            "id": 231,
-            "title": "The Ladykillers",
-            "year": 2004
-        },
-        {
-            "id": 232,
-            "title": "The Aviator",
-            "year": 2004
-        },
-        {
-            "id": 233,
-            "title": "The Life Aquatic with Steve Zissou",
-            "year": 2004
-        },
-        {
-            "id": 234,
-            "title": "The Machinist",
-            "year": 2004
-        },
-        {
-            "id": 235,
-            "title": "The Motorcycle Diaries",
-            "year": 2004
-        },
-        {
-            "id": 236,
-            "title": "The Village",
-            "year": 2004
-        },
-        {
-            "id": 237,
-            "title": "The Constant Gardener",
-            "year": 2005
-        },
-        {
-            "id": 238,
-            "title": "The New World",
-            "year": 2005
-        },
-        {
-            "id": 239,
-            "title": "The Three Burials of Melquiades Estrada",
-            "year": 2005
-        },
-       
-        {
-            "id": 240,
-            "title": "Never Gonna Give you Up",
-            "year": 2005
-        },
-        {
-            "id": 241,
-            "title": "The Departed",
-            "year": 2006
-        },
-        {
-            "id": 242,
-            "title": "The Lives of Others",
-            "year": 2006
-        },
-        {
-            "id": 243,
-            "title": "The Prestige",
-            "year": 2006
-        },
-        {
-            "id": 244,
-            "title": "The Queen",
-            "year": 2006
-        },
-        {
-            "id": 245,
-            "title": "The Wind That Shakes the Barley",
-            "year": 2006
-        },
-        {
-            "id": 246,
-            "title": "The Assassination of Jesse James by the Coward Robert Ford",
-            "year": 2007
-        },
-        {
-            "id": 247,
-            "title": "The Diving Bell and the Butterfly",
-            "year": 2007
-        },
-        {
-            "id": 248,
-            "title": "The Orphanage",
-            "year": 2007
-        },
-        {
-            "id": 249,
-            "title": "The Secret in Their Eyes",
-            "year": 2009
-        },
-        {
-            "id": 250,
-            "title": "The Social Network",
-            "year": 2010
-        }
+  {
+    "id": 101,
+    "bechdel": 0,
+    "rating": 8.2,
+    "title": "The Great Escape",
+    "year": 1963
+  },
+  {
+    "id": 102,
+    "bechdel": 0,
+    "rating": 8.2,
+    "title": "The Elephant Man",
+    "year": 1980
+  },
+  {
+    "id": 103,
+    "bechdel": 0,
+    "rating": 8.2,
+    "title": "Rashomon",
+    "year": 1950
+  },
+  {
+    "id": 104,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Seventh Seal",
+    "year": 1957
+  },
+  {
+    "id": 105,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "Blade Runner",
+    "year": 1982
+  },
+  {
+    "id": 106,
+    "bechdel": 0,
+    "rating": 8.2,
+    "title": "Chinatown",
+    "year": 1974
+  },
+  {
+    "id": 107,
+    "bechdel": 0,
+    "rating": 8.2,
+    "title": "The Treasure of the Sierra Madre",
+    "year": 1948
+  },
+  {
+    "id": 108,
+    "bechdel": 0,
+    "rating": 8.0,
+    "title": "The Maltese Falcon",
+    "year": 1941
+  },
+  {
+    "id": 109,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "Jurassic Park",
+    "year": 1993
+  },
+  {
+    "id": 110,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Bridge on the River Kwai",
+    "year": 1957
+  },
+  {
+    "id": 111,
+    "bechdel": 1,
+    "rating": 8.2,
+    "title": "Gone with the Wind",
+    "year": 1939
+  },
+  {
+    "id": 112,
+    "bechdel": 1,
+    "rating": 8.0,
+    "title": "The Wizard of Oz",
+    "year": 1939
+  },
+  {
+    "id": 113,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Third Man",
+    "year": 1949
+  },
+  {
+    "id": 114,
+    "bechdel": 1,
+    "rating": 8.1,
+    "title": "The Deer Hunter",
+    "year": 1978
+  },
+  {
+    "id": 115,
+    "bechdel": 0,
+    "rating": 8.0,
+    "title": "The Revenant",
+    "year": 2015
+  },
+  {
+    "id": 116,
+    "bechdel": 1,
+    "rating": 8.1,
+    "title": "Room",
+    "year": 2015
+  },
+  {
+    "id": 117,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Big Lebowski",
+    "year": 1998
+  },
+  {
+    "id": 118,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Grand Budapest Hotel",
+    "year": 2014
+  },
+  {
+    "id": 119,
+    "bechdel": 1,
+    "rating": 8.1,
+    "title": "The Terminator",
+    "year": 1984
+  },
+  {
+    "id": 120,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Wages of Fear",
+    "year": 1953
+  },
+  {
+    "id": 121,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Social Network",
+    "year": 2010
+  },
+  {
+    "id": 122,
+    "bechdel": 1,
+    "rating": 8.1,
+    "title": "The Exorcist",
+    "year": 1973
+  },
+  {
+    "id": 123,
+    "bechdel": 1,
+    "rating": 8.0,
+    "title": "The Grapes of Wrath",
+    "year": 1940
+  },
+  {
+    "id": 124,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Best Years of Our Lives",
+    "year": 1946
+  },
+  {
+    "id": 125,
+    "bechdel": 1,
+    "rating": 7.9,
+    "title": "The Lion in Winter",
+    "year": 1968
+  },
+  {
+    "id": 126,
+    "bechdel": 1,
+    "rating": 8.0,
+    "title": "The Night of the Hunter",
+    "year": 1955
+  },
+  {
+    "id": 127,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The 400 Blows",
+    "year": 1959
+  },
+  {
+    "id": 128,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Battle of Algiers",
+    "year": 1966
+  },
+  {
+    "id": 129,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Passion of Joan of Arc",
+    "year": 1928
+  },
+  {
+    "id": 130,
+    "bechdel": 0,
+    "rating": 8.2,
+    "title": "The Kid",
+    "year": 1921
+  },
+  {
+    "id": 131,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The General",
+    "year": 1926
+  },
+  {
+    "id": 132,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Gold Rush",
+    "year": 1925
+  },
+  {
+    "id": 133,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Circus",
+    "year": 1928
+  },
+  {
+    "id": 134,
+    "bechdel": 0,
+    "rating": 7.9,
+    "title": "The Adventures of Robin Hood",
+    "year": 1938
+  },
+  {
+    "id": 135,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Hustler",
+    "year": 1961
+  },
+  {
+    "id": 136,
+    "bechdel": 0,
+    "rating": 8.0,
+    "title": "The Killing",
+    "year": 1956
+  },
+  {
+    "id": 137,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Man Who Shot Liberty Valance",
+    "year": 1962
+  },
+  {
+    "id": 138,
+    "bechdel": 0,
+    "rating": 7.9,
+    "title": "The Wild Bunch",
+    "year": 1969
+  },
+  {
+    "id": 139,
+    "bechdel": 0,
+    "rating": 7.7,
+    "title": "The French Connection",
+    "year": 1971
+  },
+  {
+    "id": 140,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Conversation",
+    "year": 1974
+  },
+  {
+    "id": 141,
+    "bechdel": 0,
+    "rating": 8.0,
+    "title": "The Last Picture Show",
+    "year": 1971
+  },
+  {
+    "id": 142,
+    "bechdel": 0,
+    "rating": 8.3,
+    "title": "The Sting",
+    "year": 1973
+  },
+  {
+    "id": 143,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Day the Earth Stood Still",
+    "year": 1951
+  },
+  {
+    "id": 144,
+    "bechdel": 0,
+    "rating": 7.9,
+    "title": "The Manchurian Candidate",
+    "year": 1962
+  },
+  {
+    "id": 145,
+    "bechdel": 1,
+    "rating": 7.6,
+    "title": "The Birds",
+    "year": 1963
+  },
+  {
+    "id": 146,
+    "bechdel": 1,
+    "rating": 7.4,
+    "title": "The Haunting",
+    "year": 1963
+  },
+  {
+    "id": 147,
+    "bechdel": 1,
+    "rating": 7.7,
+    "title": "The Innocents",
+    "year": 1961
+  },
+  {
+    "id": 148,
+    "bechdel": 1,
+    "rating": 7.8,
+    "title": "The Umbrellas of Cherbourg",
+    "year": 1964
+  },
+  {
+    "id": 149,
+    "bechdel": 0,
+    "rating": 7.9,
+    "title": "The Leopard",
+    "year": 1963
+  },
+  {
+    "id": 150,
+    "bechdel": 1,
+    "rating": 8.1,
+    "title": "The Red Shoes",
+    "year": 1948
+  },
+  {
+    "id": 151,
+    "bechdel": 0,
+    "rating": 7.4,
+    "title": "The Band Wagon",
+    "year": 1953
+  },
+  {
+    "id": 152,
+    "bechdel": 0,
+    "rating": 7.7,
+    "title": "The African Queen",
+    "year": 1951
+  },
+  {
+    "id": 153,
+    "bechdel": 0,
+    "rating": 7.7,
+    "title": "The Quiet Man",
+    "year": 1952
+  },
+  {
+    "id": 154,
+    "bechdel": 1,
+    "rating": 8.0,
+    "title": "The Searchers",
+    "year": 1956
+  },
+  {
+    "id": 155,
+    "bechdel": 0,
+    "rating": 8.2,
+    "title": "The Apu Trilogy",
+    "year": 1955
+  },
+  {
+    "id": 156,
+    "bechdel": 0,
+    "rating": 8.5,
+    "title": "The Human Condition",
+    "year": 1959
+  },
+  {
+    "id": 157,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Music Room",
+    "year": 1958
+  },
+  {
+    "id": 158,
+    "bechdel": 1,
+    "rating": 8.3,
+    "title": "The Cranes Are Flying",
+    "year": 1957
+  },
+  {
+    "id": 159,
+    "bechdel": 1,
+    "rating": 7.9,
+    "title": "The Ballad of Narayama",
+    "year": 1958
+  },
+  {
+    "id": 160,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Hidden Fortress",
+    "year": 1958
+  },
+  {
+    "id": 161,
+    "bechdel": 1,
+    "rating": 7.9,
+    "title": "The Housemaid",
+    "year": 1960
+  },
+  {
+    "id": 162,
+    "bechdel": 0,
+    "rating": 7.9,
+    "title": "The Hole",
+    "year": 1960
+  },
+  {
+    "id": 163,
+    "bechdel": 1,
+    "rating": 8.0,
+    "title": "The Virgin Spring",
+    "year": 1960
+  },
+  {
+    "id": 164,
+    "bechdel": 1,
+    "rating": 8.0,
+    "title": "The Exterminating Angel",
+    "year": 1962
+  },
+  {
+    "id": 165,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Trial",
+    "year": 1962
+  },
+  {
+    "id": 166,
+    "bechdel": 0,
+    "rating": 7.9,
+    "title": "The Servant",
+    "year": 1963
+  },
+  {
+    "id": 167,
+    "bechdel": 0,
+    "rating": 7.6,
+    "title": "The Gospel According to St. Matthew",
+    "year": 1964
+  },
+  {
+    "id": 168,
+    "bechdel": 1,
+    "rating": 8.1,
+    "title": "Inside Out",
+    "year": 2015
+  },
+  {
+    "id": 169,
+    "bechdel": 1,
+    "rating": 8.1,
+    "title": "Three Billboards Outside Ebbing, Missouri",
+    "year": 2017
+  },
+  {
+    "id": 170,
+    "bechdel": 0,
+    "rating": 8.0,
+    "title": "The Graduate",
+    "year": 1967
+  },
+  {
+    "id": 171,
+    "bechdel": 1,
+    "rating": 7.9,
+    "title": "The Lion in Winter",
+    "year": 1968
+  },
+  {
+    "id": 172,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "Trainspotting",
+    "year": 1996
+  },
+  {
+    "id": 173,
+    "bechdel": 1,
+    "rating": 8.0,
+    "title": "The Conformist",
+    "year": 1970
+  },
+  {
+    "id": 174,
+    "bechdel": 0,
+    "rating": 8.0,
+    "title": "The Last Picture Show",
+    "year": 1971
+  },
+  {
+    "id": 175,
+    "bechdel": 1,
+    "rating": 7.8,
+    "title": "The Discreet Charm of the Bourgeoisie",
+    "year": 1972
+  },
+  {
+    "bechdel": 0,
+    "rating": 8.1,
+    "id": 176,
+    "title": "Warrior",
+    "year": 2011
+  },
+  {
+    "id": 177,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "Harry Potter and the Deatlhly Hallows: Part 2",
+    "year": 2011
+  },
+  {
+    "id": 178,
+    "bechdel": 0,
+    "rating": 8.4,
+    "title": "I'm still here",
+    "year": 2024
+  },
+  {
+    "id": 179,
+    "bechdel": 1,
+    "rating": 8.0,
+    "title": "The Mirror",
+    "year": 1975
+  },
+  {
+    "id": 180,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Man Who Would Be King",
+    "year": 1975
+  },
+  {
+    "id": 181,
+    "bechdel": 1,
+    "rating": 8.1,
+    "title": "My neighbour totoro",
+    "year": 1988
+  },
+  {
+    "id": 182,
+    "bechdel": 0,
+    "rating": 8.2,
+    "title": "The Elephant Man",
+    "year": 1980
+  },
+  {
+    "id": 183,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "Mad Max: Fury Road",
+    "year": 2015
+  },
+  {
+    "id": 184,
+    "bechdel": 0,
+    "rating": 8.2,
+    "title": "The Thing",
+    "year": 1982
+  },
+  {
+    "id": 185,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The King of Comedy",
+    "year": 1982
+  },
+  {
+    "id": 186,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Right Stuff",
+    "year": 1983
+  },
+  {
+    "id": 187,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Killing Fields",
+    "year": 1984
+  },
+  {
+    "id": 188,
+    "bechdel": 1,
+    "rating": 7.7,
+    "title": "The Purple Rose of Cairo",
+    "year": 1985
+  },
+  {
+    "id": 189,
+    "bechdel": 0,
+    "rating": 7.4,
+    "title": "The Mission",
+    "year": 1986
+  },
+  {
+    "id": 190,
+    "bechdel": 1,
+    "rating": 7.7,
+    "title": "The Last Emperor",
+    "year": 1987
+  },
+  {
+    "id": 191,
+    "bechdel": 0,
+    "rating": 7.9,
+    "title": "Hacksaw Ridge",
+    "year": 2016
+  },
+  {
+    "id": 192,
+    "bechdel": 0,
+    "rating": 7.5,
+    "title": "The Cook, the Thief, His Wife & Her Lover",
+    "year": 1989
+  },
+  {
+    "id": 193,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "The Grifters",
+    "year": 1990
+  },
+  {
+    "id": 194,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "Memories of Murder",
+    "year": 2003
+  },
+  {
+    "id": 195,
+    "bechdel": 0,
+    "rating": 7.5,
+    "title": "The Player",
+    "year": 1992
+  },
+  {
+    "id": 196,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Fugitive",
+    "year": 1993
+  },
+  {
+    "id": 197,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "Monsters, Inc",
+    "year": 2001
+  },
+  {
+    "id": 198,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "Wild Tales",
+    "year": 2014
+  },
+  {
+    "id": 199,
+    "bechdel": 1,
+    "rating": 7.4,
+    "title": "The English Patient",
+    "year": 1996
+  },
+  {
+    "id": 200,
+    "bechdel": 0,
+    "rating": 7.4,
+    "title": "The Sweet Hereafter",
+    "year": 1997
+  },
+  {
+    "id": 201,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "How to Train Your Dragon",
+    "year": 1998
+  },
+  {
+    "id": 202,
+    "bechdel": 0,
+    "rating": 7.6,
+    "title": "The Thin Red Line",
+    "year": 1998
+  },
+  {
+    "id": 203,
+    "bechdel": 1,
+    "rating": 8.2,
+    "title": "The Sixth Sense",
+    "year": 1999
+  },
+  {
+    "id": 204,
+    "bechdel": 0,
+    "rating": 7.8,
+    "title": "The Insider",
+    "year": 1999
+  },
+  {
+    "id": 205,
+    "bechdel": 0,
+    "rating": 8.1,
+    "title": "Jaws",
+    "year": 1975
+  },
+  {
+    "id": 206,
+    "bechdel": 1,
+    "rating": 8.0,
+    "title": "The Straight Story",
+    "year": 1999
+  },
+  {
+    "id": 207,
+    "bechdel": 1,
+    "rating": 7.2,
+    "title": "The Virgin Suicides",
+    "year": 1999
+  },
+  {
+    "id": 208,
+    "bechdel": 1,
+    "rating": 6.4,
+    "title": "The Cell",
+    "year": 2000
+  },
+  {
+    "id": 209,
+    "bechdel": 0,
+    "rating": 6.9,
+    "title": "The Contender",
+    "year": 2000
+  },
+  {
+    "id": 210,
+    "bechdel": 0,
+    "rating": 6.7,
+    "title": "The Gift",
+    "year": 2000
+  },
+  {
+    "id": 211,
+    "bechdel": 0,
+    "rating": 6.7,
+    "title": "The Legend of Bagger Vance",
+    "year": 2000
+  },
+  {
+    "id": 212,
+    "bechdel": 0,
+    "rating": 6.4,
+    "title": "The Perfect Storm",
+    "year": 2000
+  },
+  {
+    "id": 213,
+    "bechdel": 1,
+    "rating": 7.2,
+    "title": "The Patriot",
+    "year": 2000
+  },
+  {
+    "id": 214,
+    "bechdel": 0,
+    "rating": 6.8,
+    "title": "The Pledge",
+    "year": 2001
+  },
+  {
+    "id": 215,
+    "bechdel": 1,
+    "rating": 7.6,
+    "title": "The Royal Tenenbaums",
+    "year": 2001
+  },
+  {
+    "id": 216,
+    "bechdel": 0,
+    "rating": 6.7,
+    "title": "The Shipping News",
+    "year": 2001
+  },
+  {
+    "id": 217,
+    "bechdel": 1,
+    "rating": 7.6,
+    "title": "The Others",
+    "year": 2001
+  },
+  {
+    "id": 218,
+    "bechdel": 0,
+    "rating": 7.5,
+    "title": "The Man Who Wasn't There",
+    "year": 2001
+  },
+  {
+    "id": 219,
+    "bechdel": 0,
+    "rating": 6.9,
+    "title": "The Majestic",
+    "year": 2001
+  },
+  [
+    {
+      "id": 220,
+      "title": "The Mothman Prophecies",
+      "year": 2002,
+      "bechdel": 0,
+      "rating": 6.6
+    },
+    {
+      "id": 221,
+      "title": "The Hours",
+      "year": 2002,
+      "bechdel": 3,
+      "rating": 7.5
+    },
+    {
+      "id": 222,
+      "title": "The Pirates of the Caribbean: The Curse of the Black Pearl",
+      "year": 2002,
+      "bechdel": 1,
+      "rating": 8.1
+    },
+    {
+      "id": 223,
+      "title": "The Quiet American",
+      "year": 2002,
+      "bechdel": 0,
+      "rating": 6.6
+    },
+    {
+      "id": 224,
+      "title": "The Ring",
+      "year": 2002,
+      "bechdel": 0,
+      "rating": 7.1
+    },
+    {
+      "id": 225,
+      "title": "The Son",
+      "year": 2002,
+      "bechdel": null,
+      "rating": 7.7
+    },
+    {
+      "id": 226,
+      "title": "The Triplets of Belleville",
+      "year": 2003,
+      "bechdel": 3,
+      "rating": 7.8
+    },
+    {
+      "id": 227,
+      "title": "The Barbarian Invasions",
+      "year": 2003,
+      "bechdel": 1,
+      "rating": 7.3
+    },
+    {
+      "id": 228,
+      "title": "The Cooler",
+      "year": 2003,
+      "bechdel": 0,
+      "rating": 7.0
+    },
+    {
+      "id": 229,
+      "title": "The Station Agent",
+      "year": 2003,
+      "bechdel": 1,
+      "rating": 7.6
+    },
+    {
+      "id": 230,
+      "title": "The Dreamers",
+      "year": 2003,
+      "bechdel": 0,
+      "rating": 6.7
+    },
+    {
+      "id": 231,
+      "title": "The Ladykillers",
+      "year": 2004,
+      "bechdel": 0,
+      "rating": 5.9
+    },
+    {
+      "id": 232,
+      "title": "The Aviator",
+      "year": 2004,
+      "bechdel": 0,
+      "rating": 7.5
+    },
+    {
+      "id": 233,
+      "title": "The Life Aquatic with Steve Zissou",
+      "year": 2004,
+      "bechdel": 1,
+      "rating": 7.3
+    },
+    {
+      "id": 234,
+      "title": "The Machinist",
+      "year": 2004,
+      "bechdel": 0,
+      "rating": 7.7
+    },
+    {
+      "id": 235,
+      "title": "The Motorcycle Diaries",
+      "year": 2004,
+      "bechdel": 0,
+      "rating": 7.8
+    },
+    {
+      "id": 236,
+      "title": "The Village",
+      "year": 2004,
+      "bechdel": 1,
+      "rating": 6.5
+    },
+    {
+      "id": 237,
+      "title": "The Constant Gardener",
+      "year": 2005,
+      "bechdel": 0,
+      "rating": 7.4
+    },
+    {
+      "id": 238,
+      "title": "The New World",
+      "year": 2005,
+      "bechdel": 0,
+      "rating": 6.7
+    },
+    {
+      "id": 239,
+      "title": "The Three Burials of Melquiades Estrada",
+      "year": 2005,
+      "bechdel": 0,
+      "rating": 7.2
+    },
+    {
+      "id": 240,
+      "title": "Never Gonna Give you Up",
+      "year": 2005,
+      "bechdel": null,
+      "rating": null
+    },
+    {
+      "id": 241,
+      "title": "The Departed",
+      "year": 2006,
+      "bechdel": 0,
+      "rating": 8.5
+    },
+    {
+      "id": 242,
+      "title": "The Lives of Others",
+      "year": 2006,
+      "bechdel": 0,
+      "rating": 8.4
+    },
+    {
+      "id": 243,
+      "title": "Demon Slayer",
+      "year": 2006,
+      "bechdel": 0,
+      "rating": 6.4
+    },
+    {
+      "id": 244,
+      "title": "The Queen",
+      "year": 2006,
+      "bechdel": 3,
+      "rating": 7.3
+    },
+    {
+      "id": 245,
+      "title": "The Wind That Shakes the Barley",
+      "year": 2006,
+      "bechdel": 0,
+      "rating": 7.5
+    },
+    {
+      "id": 246,
+      "title": "The Assassination of Jesse James by the Coward Robert Ford",
+      "year": 2007,
+      "bechdel": 0,
+      "rating": 7.5
+    },
+    {
+      "id": 247,
+      "title": "The Diving Bell and the Butterfly",
+      "year": 2007,
+      "bechdel": 0,
+      "rating": 8.0
+    },
+    {
+      "id": 248,
+      "title": "The Orphanage",
+      "year": 2007,
+      "bechdel": 0,
+      "rating": 7.4
+    },
+    {
+      "id": 249,
+      "title": "The Secret in Their Eyes",
+      "year": 2009,
+      "bechdel": 0,
+      "rating": 8.2
+    },
+    {
+      "id": 250,
+      "title": "The Social Network",
+      "year": 2010,
+      "bechdel": 0,
+      "rating": 7.8
+    }
+  ]
     
 ]

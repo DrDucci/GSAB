@@ -203,13 +203,65 @@
         </footer> 
     </div>
 <script>
+
 let slideIndexes = {
     movie: 1,
     actor: 1
 };
 
-showSlides(1, "movie");
-showSlides(1, "actor");
+// Load movie data and initialize slides
+fetch('movies.json')
+    .then(response => response.json())
+    .then(movies => {
+        // Flatten the array in case movies.json has nested arrays
+        const allMovies = movies.flat();
+        
+        // Filter out invalid entries (like the "Never Gonna Give you Up" one with null rating)
+        const validMovies = allMovies.filter(movie => movie.rating && movie.title && movie.year);
+        
+        // Shuffle the movies array
+        const shuffledMovies = shuffleArray([...validMovies]);
+        
+        // Get all slide containers
+        const slides = document.getElementsByClassName('movie-slide');
+        
+        // Distribute movies to slides (2 per slide)
+        for (let i = 0; i < slides.length; i++) {
+            const slide = slides[i];
+            const boxes = slide.querySelectorAll('.box');
+            
+            // Get two movies for this slide
+            const movie1 = shuffledMovies[i * 2];
+            const movie2 = shuffledMovies[i * 2 + 1];
+            
+            if (movie1) {
+                boxes[0].innerHTML = `
+                    <h2 class="movie-title">${movie1.title}</h2>
+                    <p class="movie-year">${movie1.year}</p>
+                `;
+            }
+            
+            if (movie2) {
+                boxes[1].innerHTML = `
+                    <h2 class="movie-title">${movie2.title}</h2>
+                    <p class="movie-year">${movie2.year}</p>
+                `;
+            }
+        }
+        
+        // Initialize slideshow
+        showSlides(1, "movie");
+    })
+    .catch(error => console.error('Error loading movies:', error));
+
+// Fisher-Yates shuffle algorithm
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 function plusSlides(n, carousel) {
     showSlides(slideIndexes[carousel] += n, carousel);
