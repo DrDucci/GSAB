@@ -158,5 +158,5 @@ function viewMovieDetails(movie) {
     // Store movie data in sessionStorage
     sessionStorage.setItem('currentMovie', JSON.stringify(movie));
     // Redirect to movie details page
-    window.location.href = 'pp.html';
+    window.location.href = 'movie.html';
 }

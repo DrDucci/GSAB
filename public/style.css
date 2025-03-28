@@ -191,6 +191,7 @@ p {
 .box {
     flex: 1;
     background-color: #000;
+    cursor: pointer;
     color: #5ba96d;
     padding: 30px;
     border-radius: 15px;
