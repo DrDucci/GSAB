@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Angerpoise';
+    src: url('fonts/Angerpoise Lampshade.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root{
     /* https://www.realtimecolors.com/?colors=18100f-faf7f7-8d544b-b5cd88-85ac7c&fonts=Poppins-Poppins */
         --background: #424040c8;
@@ -70,7 +78,7 @@ h1, h2, h3, h4, h5{
        1px -1px 0 black,
       -1px  1px 0 black,
        1px  1px 0 black;
-       font-family: 'Brush Script MT', cursive;
+       font-family: 'Angerpoise';
   }
 
 p{
