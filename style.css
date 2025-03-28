@@ -1,6 +1,6 @@
 :root{
     /* https://www.realtimecolors.com/?colors=18100f-faf7f7-8d544b-b5cd88-85ac7c&fonts=Poppins-Poppins */
-        --background: #000000;
+        --background: #ad7446;
         --primary: #5ba96d;
         --secondary: #a2cec9;
         --accent: hsl(0, 0%, 93%);
@@ -90,21 +90,47 @@ p{
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
+
 #content{
     display: grid;
-    grid-template-rows: 40vh auto 10vh;
+    grid-template-rows: auto 15vh auto 10vh;
     margin-left: 0%; 
     width: 100%;
     grid-template-columns: 100%;
     grid-template-areas: 
     "hero"
+    "search"
     "central"
     "footer";
 }
 
+/* Central------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+#central{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: central;
+    row-gap: 20vh;
+
+    height: 100%;
+    overflow: hidden;
+
+    background-color:var(--background);
+}
+
+.central div{
+    overflow: hidden;
+}
+
+.central h2{
+    font-size: 5dvh;
+    padding-bottom: 5vh;
+}
+
+/* HERO------------------------------------------------------------------------------------------------------------------------------------------------ */
+
 
 #hero{
     display: flex;
@@ -127,8 +153,8 @@ p{
 
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.356) ;
 
+    background-color: rgba(0, 0, 0, 0.356) ;
 }
 
 .shader h1, .shader h4{
@@ -140,15 +166,72 @@ p{
     font-size: 8dvh;
     font-weight: 700;
     padding: 0.5rem;
+    margin-top: 10vh;
 }
 
 .shader h4{
     font-size: 5dvh;
     font-weight: 600;
     padding: 0.5rem;
+    margin-bottom: 10vh;
 }
 
+/* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+
+    grid-area: search;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+  
+  .searchTerm {
+    width: 150%;
+    border: 3px solid #979999;
+    border-right: none;
+    padding: 5px;
+    height: 60px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #979999;
+   
+  }
+  
+  .searchTerm:focus{
+    color: #000000;
+  }
+  
+  .searchButton {
+    width: 100px;
+    height: 60px;
+    border: 1px solid #979999;
+    background: #979999;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .menubuttons{
+    display: flex;
+    flex-direction: row;
+    gap: 15vw;
+  }
+
 /* Film karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
 
 * {box-sizing:border-box}
 
@@ -162,6 +245,153 @@ p{
 .mySlides {
     display: none;
     display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 1300px;
+    height: 600px;
+}
+.slide-image {
+    height: 600px;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+.slide-image img {
+    width: 700px;
+    height: 600px;
+    align-items: left;
+    justify-content: left;
+
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Actor karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.actor-carousel {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    overflow-x: visible;
+   
+}
+
+.actor-carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.actor-carousel-track {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+    height: 600px;
+    gap: 300px;
+}
+.actor-image {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.actor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Footer------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1300px;
+  height: 600px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+  }
+
+/* ------------------------------------------ */
+
+.stats{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+  canvas {
+    background: rgb(92, 92, 92);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+canvas p{
+    color: wheat;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.central{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     background: transparent;
     padding: 20px;
@@ -266,132 +496,8 @@ p{
     border-radius: 10px;
 }
 
+/* Footer------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-/* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
-
-
-.search-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    width: 100%; 
-    padding: 20px 0; 
-}
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
-}
-
-  
-  .searchTerm {
-    width: 150%;
-    border: 3px solid #979999;
-    border-right: none;
-    padding: 5px;
-    height: 60px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #979999;
-   
-  }
-  
-  .searchTerm:focus{
-    color: #000000;
-  }
-  
-  .searchButton {
-    width: 100px;
-    height: 60px;
-    border: 1px solid #979999;
-    background: #979999;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  .wrap{
-    width: 80%;
-  }
-
-  .menubuttons{
-    display: flex;
-    flex-direction: row;
-    gap: 5vw;
-  }
-
-/* ------------------------------------------ */
-
-.stats{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-  canvas {
-    background: rgb(92, 92, 92);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-canvas p{
-    color: wheat;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
-
-.central{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    grid-area: central;
-    row-gap: 20vh;
-
-    height: 100%;
-
-    background-color:var(--background);
-}
-
-.central div{
-    overflow: hidden;
-
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.central h2{
-    font-size: 5dvh;
-    padding-bottom: 5vh;
-}
-
-/* ------------------------------------------ */
-
-.about-us{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    background-color: white;
-    padding: 2vh;
-}
-
-.about-us p{
-    padding-top: 5vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
-
-    text-align: center;
-}
-
-.about-us img{
-    width: 85%;
-    margin: 5%;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 footer{
     display: grid;
@@ -669,9 +775,6 @@ PORTFOLIO-----------------------------------------------------------------------
     background-color: transparent;
 }
 
-.actor-carousel{
-
-}
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ 
 POLICY------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------- */
