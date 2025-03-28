@@ -91,21 +91,47 @@ p{
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
+
 #content{
     display: grid;
-    grid-template-rows: 40vh auto 10vh;
+    grid-template-rows: auto 15vh auto 10vh;
     margin-left: 0%; 
     width: 100%;
     grid-template-columns: 100%;
     grid-template-areas: 
     "hero"
+    "search"
     "central"
     "footer";
 }
 
+/* Central------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+#central{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: central;
+    row-gap: 20vh;
+
+    height: 100%;
+    overflow: hidden;
+
+    background-color:var(--background);
+}
+
+.central div{
+    overflow: hidden;
+}
+
+.central h2{
+    font-size: 5dvh;
+    padding-bottom: 5vh;
+}
+
+/* HERO------------------------------------------------------------------------------------------------------------------------------------------------ */
+
 
 #hero{
     display: flex;
@@ -130,11 +156,12 @@ p{
 
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.356) ;
 
+    background-color: rgba(0, 0, 0, 0.356) ;
 }
 
 .shader h1, .shader h4{
+    color: #0b752b;
     color: #0b752b;
     --text-shadow: 5px 2px 4px var(--text);
 }
@@ -143,6 +170,7 @@ p{
     font-size: 8dvh;
     font-weight: 700;
     padding: 0.5rem;
+    margin-top: 10vh;
 }
 
 .shader h4{
@@ -223,19 +251,10 @@ p{
   to {opacity: 1}
 }
 
-/* Actor karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-.actor-carousel {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    align-items: center;
-    gap: 50px;
-    overflow-x: auto;
-   
-}
 
-.actor-carousel-container {
+.search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -299,6 +318,8 @@ p{
     display: flex;
 }
 
+}
+
   
   .searchTerm {
     width: 100%;
@@ -309,6 +330,7 @@ p{
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #979999;
+   
    
   }
   
@@ -327,20 +349,169 @@ p{
     cursor: pointer;
     font-size: 20px;
   }
-  
-  .wrap{
-    width: 80%;
-  }
 
   .menubuttons{
+    display: flex;
+    flex-direction: row;
+    gap: 15vw;
+  }
+
+/* Film karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1300px;
+  height: 600px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 1300px;
+    height: 600px;
+}
+.slide-image {
+    height: 600px;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+.slide-image img {
+    width: 700px;
+    height: 600px;
+    align-items: left;
+    justify-content: left;
+
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Actor karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.actor-carousel {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    overflow-x: visible;
+   
+}
+
+.actor-carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.actor-carousel-track {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+    height: 600px;
+    gap: 300px;
+}
+.actor-image {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.actor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Footer------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1300px;
+  height: 600px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
     display: flex;
     flex-direction: row;
     gap: 5vw;
   }
 
+/* ------------------------------------------ */
 
+.stats{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
+  canvas {
+    background: rgb(92, 92, 92);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+canvas p{
+    color: wheat;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
@@ -348,137 +519,19 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-area: central;
-    row-gap: 20vh;
-
-    height: 100%;
-
-    background-color:var(--background);
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 1300px;
+    height: 600px;
 }
-
-.central div{
+.slide-image {
+    height: 600px;
+    flex: 1;
+    display: flex;
     overflow: hidden;
-
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.central h2{
-    font-size: 5dvh;
-    padding-bottom: 5vh;
-}
-
-/* ------------------------------------------ */
-
-.about-us{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    background-color: white;
-    padding: 2vh;
-}
-
-.about-us p{
-    padding-top: 5vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
-
-    text-align: center;
-}
-
-.about-us img{
-    width: 85%;
-    margin: 5%;
-}
-
-/* ------------------------------------------ */
-
-.partners{
-    display: flex;
-    flex-direction: row;
-    column-gap: 2.5%;
-    
-    overflow: hidden;
-
-    background-color: white;
-    padding: 2vh;
-}
-
-.part-text{
-    padding-left: 5vw;
-    padding-top: 3vh;
-
-    width: 60%;
-}
-
-/* ------------------------------------------ */
-
-.partner-images{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    row-gap: 5vh;
-
-    width: 40%;
-}
-
-img[alt="partner1"]{
-    width: 100%;
-} 
-
-img[alt="partner2"]{
-    width: 80%;
-}
-
-img[alt="partner3"]{
-    width: 80%;
-}
-
-/* ------------------------------------------ */
-
-.mini-portfolio{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;    
-
-    background-color: white;
-    padding: 5vh;
-}
-
-.texmex{
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.texmex img{
-    height: max-content;
-    width: 45%;
-}
-
-.tex{
-    display: flex;
-    flex-direction: column;
-    padding-left: 5%;
-}
-
-/* ------------------------------------------ */
-
-.mini-contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    border-radius: 20px;
-    width: 50vw;
-
-    background-color: white;
-    padding: 5vh;
-}
-
-.mini-contact p{
-    padding-bottom: 5vh;
 }
 
 .mini-contact a{
@@ -497,58 +550,67 @@ img[alt="partner3"]{
     font-weight: 800;
 }
 
-.mini-contact a:hover{
-    background-color: #468a46;
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
 
-.blog{
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Actor karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.actor-carousel {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    overflow-x: auto;
+   
+}
+
+.actor-carousel-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
 
-    margin-left:5vh;
-    padding-bottom: 1vh;
-    height:100%;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-
-    grid-area: blog;
+.actor-carousel-track {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+    height: 600px;
+    gap: 300px;
+}
+.actor-image {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-
-    background-color: var(--background);
+    border-radius: 10px;
+    object-fit: cover;
 }
-
-.blog-content{
-    display: flex;
-    flex-direction: column;
-    row-gap: 2vh;
-    margin: 1vw;
-}
-
-.blog-content h3{
-    font-weight: 800;
-    font-size: 3dvh;
-}
-
-.blog-content h4, .blog-content p{
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    word-spacing: -0.04em;
-    font-size: 2dvh;
-}
-
-.blog-content p{
-    font-size: 2dvh;
-}
-
-.blog-content img{
+.actor-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Footer------------------------------------------------------------------------------------------------------------------------------------------------ */
+
 
 footer{
     display: grid;
