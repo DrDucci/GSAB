@@ -334,6 +334,7 @@ p{
 
 .slider-value {
     font-weight: bold;
+    color: white;
     width: 40px;
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
