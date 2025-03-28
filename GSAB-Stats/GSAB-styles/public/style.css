@@ -1,0 +1,1185 @@
+/*body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 10px;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider {
+    width: 150px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.slider-min, .slider-max {
+    font-size: 12px;
+    color: #aaa;
+    width: 40px;
+    text-align: center;
+}
+
+.slider-value {
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.filter-info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+#moviesList {
+    margin-top: 20px;
+    text-align: left;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+    */
+/* ^ Stats */
+
+
+:root{
+    /* https://www.realtimecolors.com/?colors=18100f-faf7f7-8d544b-b5cd88-85ac7c&fonts=Poppins-Poppins */
+        --background: #ad7446;
+        --primary: #5ba96d;
+        --secondary: #a2cec9;
+        --accent: hsl(0, 0%, 93%);
+        --sidebar-bg: #c9c9c9;
+        --icon-color: #ffffff;
+
+
+        --ljusblå: #8ed0e8;
+        --ljusgrön: #64c464;
+        --Ljusaregrön: #d7f0d7;
+
+    --text-font: "Rufina", serif;
+    --header-font: 'comfortaa', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: red dotted 1px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+img{
+    border-radius: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: var(--header-font);
+    font-weight: 800;
+    font-style: normal;
+    color: black;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: var(--header-font);
+    font-weight: 800;
+    font-style: normal;
+    color: black;
+}
+
+p{
+    font-family: var(--text-font);
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ------------------------------------------ */
+
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: lightgrey; 
+  }
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+#content{
+    display: grid;
+    grid-template-rows: auto 15vh auto 10vh;
+    margin-left: 0%; 
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "hero"
+    "search"
+    "central"
+    "footer";
+}
+
+/* Central------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+#central{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: central;
+    row-gap: 20vh;
+
+    height: 100%;
+    overflow: hidden;
+
+    background-color:var(--background);
+}
+
+.central div{
+    overflow: hidden;
+}
+
+.central h2{
+    font-size: 5dvh;
+    padding-bottom: 5vh;
+}
+
+/* HERO------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+#hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    grid-area: hero;
+
+    background-color: var(--primary);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.shader{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.356) ;
+}
+
+.shader h1, .shader h4{
+    color: #0b752b;
+    --text-shadow: 5px 2px 4px var(--text);
+}
+
+.shader h1{
+    font-size: 8dvh;
+    font-weight: 700;
+    padding: 0.5rem;
+    margin-top: 10vh;
+}
+
+.shader h4{
+    font-size: 5dvh;
+    font-weight: 600;
+    padding: 0.5rem;
+    margin-bottom: 10vh;
+}
+
+/* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+
+    grid-area: search;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+  
+  .searchTerm {
+    width: 150%;
+    border: 3px solid #979999;
+    border-right: none;
+    padding: 5px;
+    height: 60px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #979999;
+   
+  }
+  
+  .searchTerm:focus{
+    color: #000000;
+  }
+  
+  .searchButton {
+    width: 100px;
+    height: 60px;
+    border: 1px solid #979999;
+    background: #979999;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .menubuttons{
+    display: flex;
+    flex-direction: row;
+    gap: 15vw;
+  }
+
+/* Film karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1300px;
+  height: 600px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 1300px;
+    height: 600px;
+}
+.slide-image {
+    height: 600px;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+.slide-image img {
+    width: 700px;
+    height: 600px;
+    align-items: left;
+    justify-content: left;
+
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Actor karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.actor-carousel {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    overflow-x: visible;
+   
+}
+
+.actor-carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.actor-carousel-track {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+    height: 600px;
+    gap: 300px;
+}
+.actor-image {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.actor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Footer------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1300px;
+  height: 600px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 1300px;
+    height: 600px;
+}
+.slide-image {
+    height: 600px;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+.slide-image img {
+    width: 700px;
+    height: 600px;
+    align-items: left;
+    justify-content: left;
+
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Actor karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.actor-carousel {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    overflow-x: auto;
+   
+}
+
+.actor-carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.actor-carousel-track {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+    height: 600px;
+    gap: 300px;
+}
+.actor-image {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.actor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Footer------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+footer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 80% 20%;
+    grid-template-areas: 
+    "desc cont"
+    "desc poly";
+
+    grid-area: footer;
+    height: 70vh;
+    margin-top: 20vh;
+    background-color: rgb(28, 28, 28);
+    overflow: hidden;
+}
+
+footer p, footer h3, footer a{
+    color: whitesmoke;
+}
+
+/* ------------------------------------------ */
+
+.footer-description{
+    padding: 5vh;
+}
+
+.footer-description h3{
+    font-size: 2.5dvh;
+    padding-bottom: 1vh;
+}
+
+.footer-description p{
+    font-size: 2dvh;
+}
+
+.certific{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    padding-bottom: 5%;
+}
+
+.certific img{
+    width: 15%;
+    height: fit-content;
+}
+
+/* ------------------------------------------ */
+
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+
+    width: 50%;
+    gap: 10%;
+    font-size: 2dvh;
+}
+
+.footer-contact a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    width: 15vw;
+    height: 5vh;
+
+    background-color: var(--background);
+    color: black;
+    font-size: 1.75dvh;
+    font-family: var(--header-font);
+    font-weight: 800;
+}
+
+.footer-contact a:hover{
+    background-color: #468a46;
+}
+
+/* ------------------------------------------ */
+
+.footer-policy{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    padding-bottom: 2vh;
+}
+
+/* ------------------------------------------ */
+
+.footer-description{
+    grid-area: desc;
+}
+
+.footer-content{
+    grid-area: cont;
+}
+
+.footer-policy{
+    grid-area: poly;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ 
+KONTAKT--------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 50%;
+    padding: 5vh;
+    border-radius: 20px;
+
+    font-family: var(--text-font);
+    font-weight: 700;
+    font-size: 2dvh;
+
+    background-color: white;
+}
+
+form p{
+    padding-bottom: 5vh;
+}
+
+input{
+    height: 5dvh;
+    font-size: 2dvh
+}
+.theend input{
+    background-color: #64c464;
+    border: none;
+    font-size: 2.5dvh;
+}
+
+#RF span{
+    font-size: 2dvh;
+}
+
+.error{
+    color: red;
+    font-size: 1.5dvh;
+}
+
+#forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#forms hr{
+    margin-bottom: 5vh;
+}
+
+.theend{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 15vw;
+    height: 5vh;
+
+    border-radius: 20px;
+    background-color: var(black);
+    font-size: 2.5dvh;
+    font-family: var(--header-font);
+    font-weight: 800;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ 
+TJÄNSTER------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+#tjänster{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20vh;
+    grid-area: central;
+}
+
+#tjänster div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2vh;
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+    background-color: white;
+}
+
+#tjänster div div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    
+    padding-top: 0;
+    width: 50%;
+}
+
+#tjänster div img{
+    display: flex;
+    width: 55%;
+    height: fit-content;
+    justify-self: center;
+    align-self: center;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ 
+PORTFOLIO------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+#portfolio{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20vh;
+    grid-area: central;
+}
+
+.focus-overlay{
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(180deg, transparent 0, transparent 65%, rgba(0, 0, 0, .35) 83.5%, rgba(0, 0, 0, .75));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.focus{
+    display: flex;
+    justify-content:right;
+
+    padding-top: 30vh;
+
+    background-image: url(pics/WINNIEBG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.infocontainer{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+
+    margin-bottom: 15px;
+}
+
+.infocontainer div{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding-bottom: 0;
+}
+
+.infocontainer img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+#portfolio div div{
+    background-color: transparent;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ 
+POLICY------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    gap: 5vh;
+
+    background-color: white;
+    padding: 5vh;
+    border-radius: 35px;
+}
+
+.text h2{
+    font-size: 5dvh;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+@media screen and (max-width:1000px){
+    #content{ 
+        margin-left: 0% !important;
+    }
+    
+    #contentindex{
+        margin-left: 0% !important;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100vh auto 10vh;
+        grid-template-areas: 
+        "hero"
+        "central"
+        "footer";
+    }
+
+    #header{
+        width:60vh;
+        left:-60%;
+    }
+
+    #sidebar{
+        width:60%;
+    }
+
+    #x_button{
+        left: 60%;
+    }
+
+    .blog{
+        display: none;
+    }
+   
+    .central div{
+    border-radius: 0px;
+    width:100%;
+    }
+
+    .footer-contact a{
+        width: 30vw;
+    }
+
+    .footer-description{
+        padding-right: 0;
+    }
+
+    .shader h1{
+        font-size: 6dvh;
+    }
+
+    .shader h4{
+        font-size: 3dvh;
+    }
+
+    .button-item{
+        font-size: 7dvh;
+    }
+
+    form{
+        width: 100%;
+        border-radius: 0px;
+        border:none;
+    }
+
+    .theend input{
+        width:30vw; 
+    }
+    #portfolio div{
+        flex-direction: column-reverse;
+        align-items: center;
+
+        padding: 5%;
+        padding-top: 4vh;
+        padding-bottom: 4vh;
+    }
+
+    #portfolio div div{
+        width: 100%;
+    }
+
+    #portfolio div img{
+        width: 80%;
+    }
+
+    #tjänster div{
+        flex-direction: column-reverse;
+        align-items: center;
+
+        padding: 5%;
+        padding-top: 4vh;
+        padding-bottom: 4vh;
+    }
+
+    #tjänster div div{
+        width: 100%;
+    }
+
+    #tjänster div img{
+        width: 80%;
+    }
+
+    .certific img{
+        width: 25%;
+    }
+}
+#forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 0;
+    background-color: var(--background);
+}
+
+#forms form {
+    width: 50%;
+    padding: 5vh;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#forms h2 {
+    font-size: 4dvh;
+    margin-bottom: 2vh;
+    color: var(--primary);
+}
+
+#forms p {
+    font-size: 2dvh;
+    margin-bottom: 3vh;
+    color: #333;
+}
+
+#forms hr {
+    margin: 2vh 0;
+    border: 1px solid #ddd;
+}
+
+#forms label {
+    font-size: 2dvh;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1vh;
+}
+
+#forms input[type="text"],
+#forms input[type="email"],
+#forms textarea {
+    width: 100%;
+    padding: 1.5vh;
+    margin-bottom: 2vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 2dvh;
+    font-family: var(--text-font);
+}
+
+#forms textarea {
+    resize: vertical;
+    min-height: 15vh;
+}
+
+#forms .error {
+    color: red;
+    font-size: 1.5dvh;
+    margin-bottom: 2vh;
+}
+
+#forms .theend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+#forms .theend input[type="submit"] {
+    background-color: var(--background);
+    border: none;
+    border-radius: 20px;
+    padding: 1.5vh 3vh;
+    font-size: 2.5dvh;
+    font-family: var(--header-font);
+    font-weight: 800;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#forms .theend input[type="submit"]:hover {
+    background-color: #468a46;
+}
+
+#forms .theend #RF {
+    font-size: 1.5dvh;
+    color: #666;
+}
+
+@media screen and (max-width: 1000px) {
+    #forms form {
+        width: 90%;
+        padding: 3vh;
+    }
+
+    #forms h2 {
+        font-size: 3dvh;
+    }
+
+    #forms p {
+        font-size: 1.8dvh;
+    }
+
+    #forms input[type="text"],
+    #forms input[type="email"],
+    #forms textarea {
+        font-size: 1.8dvh;
+    }
+
+    #forms .theend input[type="submit"] {
+        width: 100%;
+        font-size: 2dvh;
+    }
+}
+.text {
+    padding: 5vh 10%;
+    background-color: white;
+    border-radius: 20px;
+    margin: 5vh auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text h2 {
+    font-size: 3dvh;
+    margin-bottom: 2vh;
+    color: var(--primary);
+}
+
+.text p {
+    font-size: 2dvh;
+    line-height: 1.6;
+    color: #333;
+}
+
+footer {
+    margin-top: 5vh;
+}
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 5vh 10%;
+    background-color: var(--background);
+}
+
+#portfolio h2 {
+    font-size: 3dvh;
+    margin-bottom: 2vh;
+    color: var(--primary);
+}
+
+#portfolio p {
+    font-size: 2dvh;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1000px) {
+    #portfolio div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #portfolio img {
+        width: 80%;
+        margin-bottom: 3vh;
+    }
+}
+#tjänster {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 5vh 10%;
+    background-color: var(--background);
+}
+
+#tjänster div {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    background-color: white;
+    padding: 5vh;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#tjänster img {
+    width: 45%;
+    border-radius: 20px;
+}
+
+#tjänster div div {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#tjänster h2 {
+    font-size: 3dvh;
+    margin-bottom: 2vh;
+    color: var(--primary);
+}
+
+#tjänster p {
+    font-size: 2dvh;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media screen and (max-width: 1000px) {
+    #tjänster div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #tjänster img {
+        width: 80%;
+        margin-bottom: 3vh;
+    }
+}
+

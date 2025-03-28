@@ -250,6 +250,74 @@ p{
   to {opacity: 1}
 }
 
+/* Statestik------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.slider-container {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 10px;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider {
+    width: 150px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.slider-min, .slider-max {
+    font-size: 12px;
+    color: #aaa;
+    width: 40px;
+    text-align: center;
+}
+
+.slider-value {
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.filter-info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+#moviesList {
+    margin-top: 20px;
+    text-align: left;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
 /* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 

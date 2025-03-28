@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rufina:wght@400;700&display=swap"; rel="stylesheet">
-
+    <script defer src="script.js"></script> 
     
 </head>
 <body>
@@ -62,26 +62,51 @@
             </div>
         </div>
 
-<footer>
-    <div class="footer-description">
-         <h3>Social Media</h3>
-             <div class="certific">
-                <a href="https://www.instagram.com"> <img src="pics/instagram.png" alt="instagram"></a>
-                <a href="https://x.com"> <img src="pics/twitter.png" alt="twitter"></a>
-                <a href="https://www.facebook.com"> <img src="pics/facebook.png" alt="facebook"></a>
+        <div id="Stats">
+            <div class="slider-group">
+                <label for="slider1">Movie Amount</label>
+                <div class="slider-wrapper">
+                    <span class="slider-min">0</span>
+                    <input type="range" class="slider" id="slider1" min="0" max="250" value="250">
+                    <span class="slider-max">250</span>
+                    <span class="slider-value" id="slider1Value">250</span>
+                </div>
+                <div class="slider-group">
+                    <label for="slider2">Max Release Year</label>
+                    <div class="slider-wrapper">
+                        <span class="slider-min">1930</span>
+                        <input type="range" class="slider" id="slider2" min="1930" max="2025" value="2025">
+                        <span class="slider-max">2025</span>
+                        <span class="slider-value" id="slider2Value">2025</span>
+                    </div>
+                </div>
+                <div class="filter-info">
+                    <p>Showing: <span id="currentCount">0</span>/<span id="totalCount">0</span> movies</p>
+                    <p>Filtered Movies: <span id="filterCount">0</span> matches</p>
+                </div>
+                <div class="content">
+                    <h2>Movie List</h2>
+                    <div id="moviesList"></div> 
+        </div>
+
+        <footer>
+            <div class="footer-description">
+                 <h3>Social Media</h3>
+                     <div class="certific">
+                        <a href="https://www.instagram.com"> <img src="pics/instagram.png" alt="instagram"></a>
+                        <a href="https://x.com"> <img src="pics/twitter.png" alt="twitter"></a>
+                        <a href="https://www.facebook.com"> <img src="pics/facebook.png" alt="facebook"></a>
+                    </div>
             </div>
-    </div>
-    <div class="footer-contact">
-        <h3>Contact Us</h3>
-        <a href="kontakt.html" class="contact-button">Here!</a>
-    </div>
-    <div class="footer-policy">
-        <a href="policy.html">Integrtity policy</a>
-     </div>  
-     <div class="copyright"><h4>Ⓒ 2025 Green Statistic AB. All rights reserved.</h4></div>  
-</footer> 
-    
-</div> 
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <a href="kontakt.html" class="contact-button">Here!</a>
+            </div>
+            <div class="footer-policy">
+                <a href="policy.html">Integrtity policy</a>
+             </div>  
+             <div class="copyright"><h4>Ⓒ 2025 Green Statistic AB. All rights reserved.</h4></div>  
+        </footer> 
 
 <script>
 let slideIndexes = {
