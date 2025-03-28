@@ -1,6 +1,6 @@
 :root{
     /* https://www.realtimecolors.com/?colors=18100f-faf7f7-8d544b-b5cd88-85ac7c&fonts=Poppins-Poppins */
-        --background: #424040c8;
+        --background: #49564ac8;
         --primary: #5ba96d;
         --secondary: #a2cec9;
         --accent: hsl(0, 0%, 93%);
@@ -145,12 +145,13 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+   
     grid-area: hero;
     background-color: var(--primary);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    border-bottom: 10px solid #6c976c; 
 }
 
 
@@ -160,10 +161,11 @@ p{
     flex-direction: column;
     text-align: center;
     justify-content: center;
-
+    align-items: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
     height: 100%;
     width: 100%;
-
     background-color: rgba(0, 0, 0, 0.356) ;
 }
 
@@ -175,14 +177,12 @@ p{
 .shader h1{
     font-size: 8dvh;
     font-weight: 700;
-    padding: 0.5rem;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 
 .shader h4{
     font-size: 5dvh;
     font-weight: 600;
-    padding: 0.5rem;
 }
 
 /* Film karusell------------------------------------------------------------------------------------------------------------------------------------------------ */
@@ -287,23 +287,17 @@ p{
     display: flex;
     flex-direction: column;
     column-gap: 2vh;
-    left: 10px;
     top: 50%;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    padding: 20px;
-    background: #1c1c1c;
+    background: black;
     border-radius: 10px;
-    border-bottom: 20px;
     grid-area: sliders;
-    height: 740vh;
     width: 30vw;
-    margin-left: 25%;
-    border: 5px solid var(--primary); 
-    color: white;
 
 }
+
 
 .slider-group {
     display: flex;
@@ -341,16 +335,11 @@ p{
 
 .content {
     text-align: center;
-    max-width: 600px;
     color: white;
     padding: 20px;
-    margin-right: 25%;
     height: 100%;
-    background: #1c1c1c;
-    border: 5px solid var(--primary); 
+    background: black;
     border-radius: 10px;
-    border-bottom: 20px;
-
 
 }
 
@@ -497,13 +486,19 @@ p{
 #stats{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
     grid-template-areas: 
     "sliders statlist";
     position: static;
-    width: 100%;
-    height: 740px;
+    width: 1300px;
+    background: #1c1c1c;
+    padding: 5vh;
+    border-radius: 10px;
+    border: 5px solid var(--primary); 
+
+
 }
+
+
 
   canvas {
     background: rgb(92, 92, 92);
