@@ -20,19 +20,27 @@
 
         <div id="central">
             <div class="focus">
-                <div class="focus-overlay"></div>
                 <div class="movie-info" id="movieInfo">
                     <!-- Dynamic content will be inserted here -->
                 </div>  
             </div>
 
-            <div class="movie-description" id="movieDescription">
-                <!-- Dynamic description will be inserted here -->
-            </div>
-
-            <div class="stats">
+            <div class="movie-stats">
                 <div class="statsinfo" id="statsInfo">
-                    <!-- Dynamic stats will be inserted here -->
+                    <h2>How do we get these stats?</h2>
+                    <ul>
+                        <li>The IMDB score is calculated by:</li>
+                        <i>IMDB score * 10</i><hr>
+
+                        <li>The bechdel test is determined by yes or no</li>
+                        <i>Bechdel score is either 0 or 100</i><hr>
+
+                        <li>And the top 250 IMDB is sourced as it is</li>
+                        <i>Top250 is 0 or 250</i><hr>
+
+                        <li>All stats are sourced from our database</li>
+                        <i>With data from our two sources bechdel, and IMDB</i>
+                    </ul>
                 </div>
                 <canvas id="barChart"></canvas>
             </div>
@@ -71,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update movie info section
     const movieInfo = document.getElementById('movieInfo');
     movieInfo.innerHTML = `
-        <img class="movie-card" src="pics/${movieData.id}.png" alt="${movieData.title}">
         <div class="infocontainer">
             <h2>${movieData.title} (${movieData.year})</h2>
             <p>Rating: ${movieData.rating}/10</p>
