@@ -15,6 +15,7 @@ app.get('/api/movies', (req, res) => {
     res.json(moviesData);
 });
 
+//Bara för filler men inte viktigt
 app.post('/submit-form', (req, res) => {
     const { name, email, comment } = req.body;
     
