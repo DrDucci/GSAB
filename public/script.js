@@ -160,3 +160,54 @@ function viewMovieDetails(movie) {
     // Redirect to movie details page
     window.location.href = 'movie.html';
 }
+
+// Search functionality
+const searchTerm = document.querySelector('.searchTerm');
+const searchButton = document.querySelector('.searchButton');
+const searchError = document.createElement('p'); // For error messages
+
+function initializeSearch() {
+    // Create error message element
+    searchError.className = 'search-error';
+    searchError.style.color = '#ff6b6b';
+    searchError.style.marginTop = '10px';
+    searchError.style.display = 'none';
+    searchTerm.insertAdjacentElement('afterend', searchError);
+
+    // Set up event listeners
+    searchButton.addEventListener('click', performExactSearch);
+    searchTerm.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') performExactSearch();
+    });
+}
+
+function performExactSearch() {
+    const searchText = searchTerm.value.trim();
+    if (!searchText) {
+        searchError.style.display = 'none';
+        filterMovies(); // Reset to normal view
+        return;
+    }
+
+    // Find exact match (case insensitive)
+    const foundMovie = allMovies.find(movie => 
+        movie.title.toLowerCase() === searchText.toLowerCase()
+    );
+
+    if (foundMovie) {
+        // Redirect to movie page
+        viewMovieDetails(foundMovie);
+    } else {
+        // Show error message
+        searchError.textContent = '"' + searchText + '" does not exist in our database';
+        searchError.style.display = 'block';
+    }
+}
+
+function viewMovieDetails(movie) {
+    sessionStorage.setItem('currentMovie', JSON.stringify(movie));
+    window.location.href = 'movie.html';
+}
+
+// Add this to your loadMovies() function:
+initializeSearch();
