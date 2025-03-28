@@ -147,33 +147,40 @@
                 <button class="prev" onclick="plusSlides(-1, 'movie')">&#10094;</button>
                 <button class="next" onclick="plusSlides(1, 'movie')">&#10095;</button>
             </div>
-        </div>
+            
+            <div id="stats">
+                <div class="slider-container">
+                    <div class="slider-group">
+                        <label for="slider1">Movie Amount</label>
+                        <div class="slider-wrapper">
+                            <span class="slider-min">0</span>
+                            <input type="range" class="slider" id="slider1" min="0" max="250" value="250">
+                            <span class="slider-max">250</span>
+                            <span class="slider-value" id="slider1Value">250</span>
+                        </div>
+                    </div>
 
-        <div id="Stats">
-            <div class="slider-group">
-                <label for="slider1">Movie Amount</label>
-                <div class="slider-wrapper">
-                    <span class="slider-min">0</span>
-                    <input type="range" class="slider" id="slider1" min="0" max="250" value="250">
-                    <span class="slider-max">250</span>
-                    <span class="slider-value" id="slider1Value">250</span>
-                </div>
-                <div class="slider-group">
-                    <label for="slider2">Max Release Year</label>
-                    <div class="slider-wrapper">
-                        <span class="slider-min">1930</span>
-                        <input type="range" class="slider" id="slider2" min="1930" max="2025" value="2025">
-                        <span class="slider-max">2025</span>
-                        <span class="slider-value" id="slider2Value">2025</span>
+                    <div class="slider-group">
+                        <label for="slider2">Max Release Year</label>
+                        <div class="slider-wrapper">
+                            <span class="slider-min">1930</span>
+                            <input type="range" class="slider" id="slider2" min="1930" max="2025" value="2025">
+                            <span class="slider-max">2025</span>
+                            <span class="slider-value" id="slider2Value">2025</span>
+                        </div>
+                    </div>
+                
+                    <div class="filter-info">
+                        <p>Showing: <span id="currentCount">0</span>/<span id="totalCount">0</span> movies</p>
+                        <p>Filtered Movies: <span id="filterCount">0</span> matches</p>
                     </div>
                 </div>
-                <div class="filter-info">
-                    <p>Showing: <span id="currentCount">0</span>/<span id="totalCount">0</span> movies</p>
-                    <p>Filtered Movies: <span id="filterCount">0</span> matches</p>
-                </div>
+
                 <div class="content">
                     <h2>Movie List</h2>
                     <div id="moviesList"></div> 
+                </div>
+            </div>
         </div>
 
         <footer>
@@ -194,7 +201,7 @@
              </div>  
              <div class="copyright"><h4>Ⓒ 2025 Green Statistic AB. All rights reserved.</h4></div>  
         </footer> 
-
+    </div>
 <script>
 let slideIndexes = {
     movie: 1,
