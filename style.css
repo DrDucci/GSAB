@@ -20,7 +20,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: red dotted 1px;
+    /*border: red dotted 1px;*/
+
 }
 
 a{
@@ -52,14 +53,14 @@ h1, h2, h3, h4, h5{
     font-family: var(--header-font);
     font-weight: 800;
     font-style: normal;
-    color: black;
+    color:#468a46;
 }
 
 h1, h2, h3, h4, h5{
     font-family: var(--header-font);
     font-weight: 800;
     font-style: normal;
-    color: black;
+    color:#468a46;
 }
 
 p{
@@ -113,11 +114,13 @@ p{
     align-items: center;
 
     grid-area: hero;
-
     background-color: var(--primary);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
+
+
 
 .shader{
     display: flex;
@@ -153,8 +156,8 @@ p{
 * {box-sizing:border-box}
 
 .slideshow-container {
-  max-width: 1300px;
-  height: 600px;
+  max-width: 1600px;
+  height: 700px;
   position: relative;
   margin: auto;
 }
@@ -163,26 +166,24 @@ p{
     display: none;
     display: flex;
     align-items: center;
-    background: transparent;
+    background: #1c1c1c;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
     width: 1300px;
-    height: 600px;
+    height: 700px;
 }
 .slide-image {
-    height: 600px;
+    height: 700px;
     flex: 1;
     display: flex;
     overflow: hidden;
 }
 .slide-image img {
     width: 700px;
-    height: 600px;
+    height: 700px;
     align-items: left;
-    justify-content: left;
-
     object-fit: cover;
     border-radius: 10px;
 }
@@ -201,6 +202,7 @@ p{
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
+
 
 .next {
   right: 0;
@@ -250,7 +252,7 @@ p{
     gap: 300px;
 }
 .actor-image {
-    width: 30%;
+    width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -260,11 +262,23 @@ p{
     object-fit: cover;
 }
 .actor-image img {
-    width: 100%;
+    width: 600px;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
+
+.image-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: var(--primary);
+    font-size: 5vh;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: var(--header-font);
+    font-weight: 700;
+  }
 
 
 /* Sökfält------------------------------------------------------------------------------------------------------------------------------------------------ */
@@ -275,17 +289,19 @@ p{
     justify-content: center; 
     align-items: center;
     width: 100%; 
-    padding: 20px 0; 
+    padding: 40px 0; 
+    z-index: 10;
 }
 .search {
     width: 100%;
+    max-width: 600px;
     position: relative;
     display: flex;
 }
 
   
   .searchTerm {
-    width: 150%;
+    width: 100%;
     border: 3px solid #979999;
     border-right: none;
     padding: 5px;
@@ -547,6 +563,7 @@ footer{
     margin-top: 20vh;
     background-color: rgb(28, 28, 28);
     overflow: hidden;
+    text-align: center;
 }
 
 footer p, footer h3, footer a{
@@ -557,11 +574,32 @@ footer p, footer h3, footer a{
 
 .footer-description{
     padding: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-centered .footer-description{
+    display: flex;
+    flex-direction:column;
+    padding: 5vh;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-description h3{
     font-size: 2.5dvh;
     padding-bottom: 1vh;
+    color:#468a46;
+}
+
+.footer-description h1{
+    font-size: 5dvh;
+    padding-bottom: 1vh;
+    color:#468a46;
+
 }
 
 .footer-description p{
@@ -572,13 +610,16 @@ footer p, footer h3, footer a{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
+  
     padding-bottom: 5%;
 }
 
+
+
 .certific img{
-    width: 15%;
-    height: fit-content;
+    width: 100%;
+    height: 100%;
+  
 }
 
 /* ------------------------------------------ */
@@ -590,25 +631,34 @@ footer p, footer h3, footer a{
     justify-content: center;
     justify-self: center;
 
-    width: 50%;
+    width: 100%;
     gap: 10%;
     font-size: 2dvh;
 }
+
+.footer-centered {
+    background-color: #1c1c1c;
+    padding: 40px 0;
+    text-align: center;
+  }
+
 
 .footer-contact a{
     display: flex;
     justify-content: center;
     align-items: center;
 
+    
     border-radius: 20px;
     width: 15vw;
     height: 5vh;
 
-    background-color: var(--background);
+    background-color: var(--ljusgrön);
     color: black;
     font-size: 1.75dvh;
     font-family: var(--header-font);
     font-weight: 800;
+    
 }
 
 .footer-contact a:hover{
@@ -626,6 +676,32 @@ footer p, footer h3, footer a{
 }
 
 /* ------------------------------------------ */
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 1500px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 30px;
+  }
+
+  .copyright h4 {
+    font-family: var(--header-font);
+    font-weight: 800;
+    font-style: normal;
+    color: white;
+
+  }
+
+ 
+
+
+/* ------------------------------------------ */
+
 
 .footer-description{
     grid-area: desc;
@@ -707,7 +783,7 @@ input{
     height: 5vh;
 
     border-radius: 20px;
-    background-color: var(black);
+    background-color: var(--ljusgrön);
     font-size: 2.5dvh;
     font-family: var(--header-font);
     font-weight: 800;
@@ -810,9 +886,7 @@ PORTFOLIO-----------------------------------------------------------------------
     background-color: transparent;
 }
 
-.actor-carousel{
 
-}
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ 
 POLICY------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -1013,7 +1087,7 @@ POLICY--------------------------------------------------------------------------
 }
 
 #forms .theend input[type="submit"] {
-    background-color: var(--background);
+    background-color: var(--ljusgrön);
     border: none;
     border-radius: 20px;
     padding: 1.5vh 3vh;
