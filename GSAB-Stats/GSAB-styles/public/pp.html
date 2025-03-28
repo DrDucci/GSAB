@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <div id="content">
+        <div id="hero">
+            <div class="wrap">
+            </div>
+            <div class="menubuttons">
+                <a href="index.html"><H1>home</H1></a>
+                <a href="kontakt.html"><H1>contact</H1></a>
+                <a href="policy.html"><H1>policy</H1></a>
+            </div>
+        </div>
+
+        <div id="central">
+            <div class="focus">
+                <div class="focus-overlay"></div>
+                    <div class="movie-info">
+                    <img class="movie-card" src="pics/WINNIE.png" alt="modern house">
+                    <div class="infocontainer">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aliquid culpa! Et inventore molestias aut harum debitis eveniet saepe laborum? In, ipsa repellendus mollitia nostrum nisi officiis vel itaque ea.</p>
+                        <div>
+                            <img src="pics/TYLER.png" alt="actor">
+                            <img src="pics/TYLER.png" alt="actor">
+                            <img src="pics/TYLER.png" alt="actor">
+                            <img src="pics/TYLER.png" alt="actor">
+                        </div>
+                    </div>
+                </div>  
+            </div>
+
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam veritatis enim optio blanditiis unde repudiandae quidem dicta consequuntur animi cupiditate dolores reiciendis esse beatae minima quasi, excepturi consectetur amet nulla accusamus libero assumenda provident? Nisi tenetur asperiores illum commodi impedit suscipit itaque amet ipsum? Doloribus, non consequuntur? Veniam, perspiciatis odit!</p>
+            </div>
+
+            <div class="stats">
+                <div class="statsinfo"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nulla ullam, perspiciatis non, necessitatibus deserunt ab excepturi laborum nisi, perferendis eius corporis minima. Magni, autem.</p></div>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-description">
+                 <h3>Social Media</h3>
+                     <div class="certific">
+                        <a href="https://www.instagram.com"> <img src="pics/instagram.png" alt="instagram"></a>
+                        <a href="https://x.com"> <img src="pics/twitter.png" alt="twitter"></a>
+                        <a href="https://www.facebook.com"> <img src="pics/facebook.png" alt="facebook"></a>
+                    </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <a href="kontakt.html" class="contact-button">Here!</a>
+            </div>
+            <div class="footer-policy">
+                <a href="policy.html">Integrtity policy</a>
+             </div>  
+             <div class="copyright"><h4>Ⓒ 2025 Green Statistic AB. All rights reserved.</h4></div>  
+        </footer>  
+    </div> 
+</div>
+<script>
+const ctx = document.getElementById('barChart').getContext('2d');
+
+const data = {
+    labels: ['Kategori 1', 'Kategori 2', 'Kategori 3'],
+    datasets: [
+        {
+            label: 'X-värde',
+            data: [10, 20, 50],
+            backgroundColor: 'rgba(136, 132, 216, 0.6)'
+        },
+    ]
+};
+
+new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: 'white' },
+                        grid: { color: 'rgba(255, 255, 255, 0.2)' }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: 'white' },
+                        grid: { color: 'rgba(255, 255, 255, 0.2)' }
+                    }
+                }
+            }
+        });
+</script>
+</body>
+</html>
