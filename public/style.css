@@ -335,6 +335,10 @@ p{
 
 .content {
     text-align: center;
+    color: white;
+    max-width: 600px;
+    padding: 20px;
+    margin-right: 25%;
     height: 100%;
     background: rgba(30, 30, 30, 0.8);
     border: 5px solid var(--primary); 
