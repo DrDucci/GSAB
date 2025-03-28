@@ -94,13 +94,12 @@ p{
 
 #content{
     display: grid;
-    grid-template-rows: auto 15vh auto 10vh;
+    grid-template-rows: auto auto auto;
     margin-left: 0%; 
     width: 100%;
     grid-template-columns: 100%;
     grid-template-areas: 
     "hero"
-    "search"
     "central"
     "footer";
 }
@@ -570,13 +569,14 @@ canvas p{
 footer{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 70% 20% 10%;
     grid-template-areas: 
     "desc cont"
-    "desc poly";
+    "desc poly"
+    "copyright copyright";
 
     grid-area: footer;
-    height: 70vh;
+    height: 50vh;
     margin-top: 20vh;
     background-color: rgb(28, 28, 28);
     overflow: hidden;
@@ -697,13 +697,13 @@ footer p, footer h3, footer a{
 .copyright {
     display: flex;
     flex-direction: column;
+    grid-area: copyright;
     height: 50px;
-    width: 1500px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 0.9rem;
-    margin-top: 30px;
   }
 
   .copyright h4 {
@@ -1174,6 +1174,7 @@ POLICY--------------------------------------------------------------------------
 footer {
     margin-top: 5vh;
 }
+
 #portfolio {
     display: flex;
     flex-direction: column;
