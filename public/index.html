@@ -35,8 +35,8 @@
                 <div class="mySlides movie-slide fade">
                     <div class="slide-boxes">
                         <button class="box box-left" href="pp.html">
-                            <h2 class="movie-title">Shawshank Redemption</h2>
-                            <p class="movie-year">1994</p>
+                            <h2 class="movie-title">defefe Redemption</h2>
+                            <p class="movie-year">197694</p>
                         </button>
                         <button class="box box-left">
                             <h2 class="movie-title">Shawshank Redemption</h2>
@@ -135,7 +135,7 @@
                 </div> <div class="mySlides movie-slide fade">
                     <div class="slide-boxes">
                         <button class="box box-left">
-                            <h2 class="movie-title">Shawshank </h2>
+                            <h2 class="movie-title">Shawshank Redemption</h2>
                             <p class="movie-year">1994</p>
                         </button>
                         <button class="box box-left" href>
@@ -202,81 +202,5 @@
              <div class="copyright"><h4>Ⓒ 2025 Green Statistic AB. All rights reserved.</h4></div>  
         </footer> 
     </div>
-<script>
-
-let slideIndexes = {
-    movie: 1,
-    actor: 1
-};
-
-// Load movie data and initialize slides
-fetch('movies.json')
-    .then(response => response.json())
-    .then(movies => {
-        // Flatten the array in case movies.json has nested arrays
-        const allMovies = movies.flat();
-        
-        // Filter out invalid entries (like the "Never Gonna Give you Up" one with null rating)
-        const validMovies = allMovies.filter(movie => movie.rating && movie.title && movie.year);
-        
-        // Shuffle the movies array
-        const shuffledMovies = shuffleArray([...validMovies]);
-        
-        // Get all slide containers
-        const slides = document.getElementsByClassName('movie-slide');
-        
-        // Distribute movies to slides (2 per slide)
-        for (let i = 0; i < slides.length; i++) {
-            const slide = slides[i];
-            const boxes = slide.querySelectorAll('.box');
-            
-            // Get two movies for this slide
-            const movie1 = shuffledMovies[i * 2];
-            const movie2 = shuffledMovies[i * 2 + 1];
-            
-            if (movie1) {
-                boxes[0].innerHTML = `
-                    <h2 class="movie-title">${movie1.title}</h2>
-                    <p class="movie-year">${movie1.year}</p>
-                `;
-            }
-            
-            if (movie2) {
-                boxes[1].innerHTML = `
-                    <h2 class="movie-title">${movie2.title}</h2>
-                    <p class="movie-year">${movie2.year}</p>
-                `;
-            }
-        }
-        
-        // Initialize slideshow
-        showSlides(1, "movie");
-    })
-    .catch(error => console.error('Error loading movies:', error));
-
-// Fisher-Yates shuffle algorithm
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
-function plusSlides(n, carousel) {
-    showSlides(slideIndexes[carousel] += n, carousel);
-}
-
-function showSlides(n, carousel) {
-    let slides = document.getElementsByClassName(carousel + "-slide");
-    if (n > slides.length) { slideIndexes[carousel] = 1; }
-    if (n < 1) { slideIndexes[carousel] = slides.length; }
-    
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndexes[carousel] - 1].style.display = "block";
-}
-</script>
 </body>
 </html>
