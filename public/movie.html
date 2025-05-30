@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Details</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -42,7 +41,7 @@
                         <i>With data from our two sources bechdel, and IMDB</i>
                     </ul>
                 </div>
-                <canvas id="barChart"></canvas>
+                <div id="barChartContainer" class="bar-chart"></div>
             </div>
         </div>
         
@@ -91,91 +90,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateChart(movie) {
-    const ctx = document.getElementById('barChart').getContext('2d');
-    
-    // Convert data to appropriate scales
-    const ratingPercentage = movie.rating * 10; // 0-100 scale
-    const bechdelScore = movie.bechdel ? 100 : 0; // 0 or 100
-    const top250Position = 100 - ((movie.id / 250) * 100); // Convert to inverse percentage (higher rank = better)
-    
-    new Chart(ctx, {
-        type: 'radar',
-        data: {
-            labels: ['IMDB Rating', 'Bechdel Test', 'Top250 Rank'],
-            datasets: [{
-                label: movie.title,
-                data: [ratingPercentage, bechdelScore, top250Position],
-                backgroundColor: 'rgba(91, 169, 109, 0.4)',
-                borderColor: 'rgba(91, 169, 109, 1)',
-                pointBackgroundColor: 'rgba(91, 169, 109, 1)',
-                pointBorderColor: '#fff',
-                pointHoverRadius: 5,
-                pointHoverBackgroundColor: 'rgba(91, 169, 109, 1)',
-                pointHoverBorderColor: '#fff',
-                pointHitRadius: 10,
-                pointBorderWidth: 2,
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                r: {
-                    angleLines: {
-                        color: 'rgba(255, 255, 255, 0.2)'
-                    },
-                    grid: {
-                        color: 'rgba(255, 255, 255, 0.2)'
-                    },
-                    pointLabels: {
-                        color: 'white',
-                        font: {
-                            family: 'var(--text-font)'
-                        }
-                    },
-                    min: 0,
-                    max: 100,
-                    ticks: {
-                        backdropColor: 'transparent',
-                        color: 'white',
-                        stepSize: 20
-                    }
-                }
-            },
-            plugins: {
-                legend: {
-                    labels: {
-                        color: 'white',
-                        font: {
-                            family: 'var(--text-font)'
-                        }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            let label = context.dataset.label || '';
-                            if (label) {
-                                label += ': ';
-                            }
-                            if (context.parsed.r !== null) {
-                                switch(context.label) {
-                                    case 'IMDB Rating':
-                                        return label + movie.rating + '/10';
-                                    case 'Bechdel Test':
-                                        return label + (movie.bechdel ? 'Passed' : 'Failed');
-                                    case 'Top250 Rank':
-                                        return label + '#' + movie.id;
-                                }
-                            }
-                            return label;
-                        }
-                    }
-                }
-            }
-        }
+    const container = document.getElementById('barChartContainer');
+    container.innerHTML = ''; // Clear previous chart
+
+    const ratingPercentage = movie.rating * 10;
+    const bechdelScore = movie.bechdel ? 100 : 0;
+    const top250Position = 100 - ((movie.id / 250) * 100);
+
+    const stats = [
+        { label: 'IMDB Rating', value: ratingPercentage, suffix: '%' },
+        { label: 'Bechdel Test', value: bechdelScore, suffix: '' },
+        { label: 'Top250 Rank', value: top250Position, suffix: '%' }
+    ];
+
+    stats.forEach(stat => {
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+
+        const label = document.createElement('div');
+        label.className = 'bar-label';
+        label.textContent = `${stat.label}: ${stat.value.toFixed(1)}${stat.suffix}`;
+        bar.appendChild(label);
+
+        const track = document.createElement('div');
+        track.className = 'bar-track';
+
+        const fill = document.createElement('div');
+        fill.className = 'bar-fill';
+        fill.style.width = `${stat.value}%`;
+        fill.textContent = `${Math.round(stat.value)}${stat.suffix}`;
+        
+        track.appendChild(fill);
+        bar.appendChild(track);
+        container.appendChild(bar);
     });
 }
+
 </script>
 </body>
 </html>
