@@ -1,4 +1,9 @@
-// DOM Elements
+/**
+ * Movie App - Client Side Script
+ * Kommunikation med: http://localhost:3000/api/movies
+ */
+
+// ========== DOM Element ========== //
 const slider1 = document.getElementById('slider1');
 const slider2 = document.getElementById('slider2');
 const slider1Value = document.getElementById('slider1Value');
@@ -7,207 +12,195 @@ const currentCount = document.getElementById('currentCount');
 const totalCount = document.getElementById('totalCount');
 const filterCount = document.getElementById('filterCount');
 const moviesList = document.getElementById('moviesList');
-
-// Carousel state
-let slideIndexes = { movie: 1 };
-let allMovies = [];
-
-// Initialize everything when page loads
-document.addEventListener('DOMContentLoaded', loadMovies);
-
-async function loadMovies() {
-    try {
-        const response = await fetch('/api/movies');
-        if (!response.ok) throw new Error('Failed to load movies');
-        allMovies = await response.json();
-
-        // Initialize UI
-        totalCount.textContent = allMovies.length;
-        slider1.max = allMovies.length; 
-        slider1.value = allMovies.length;
-        slider2.value = 2025;
-        slider1Value.textContent = slider1.value;
-        slider2Value.textContent = slider2.value;
-
-        // Initialize carousel and filters
-        initializeCarousel(allMovies);
-        filterMovies();
-
-        // Set up event listeners
-        slider1.addEventListener('input', updateSlider1);
-        slider2.addEventListener('input', updateSlider2);
-
-    } catch (error) {
-        console.error('Error loading movies:', error);
-        showError();
-    }
-}
-
-function initializeCarousel(movies) {
-    const shuffledMovies = shuffleArray([...movies]);
-    const slides = document.querySelectorAll('.movie-slide');
-    
-    slides.forEach((slide, i) => {
-        const boxes = slide.querySelectorAll('.box');
-        const movie1 = shuffledMovies[i * 2];
-        const movie2 = shuffledMovies[i * 2 + 1];
-        
-        updateBoxContent(boxes[0], movie1);
-        updateBoxContent(boxes[1], movie2);
-    });
-    
-    showSlides(1, "movie");
-}
-
-function updateBoxContent(box, movie) {
-    if (box && movie) {
-        box.innerHTML = `
-            <h2 class="movie-title">${movie.title}</h2>
-            <p class="movie-year">${movie.year}</p>
-            <p class="movie-rating">Rating: ${movie.rating}</p>
-        `;
-    }
-}
-
-function filterMovies() {
-    const movieAmount = parseInt(slider1.value, 10);
-    const year = parseInt(slider2.value, 10);
-
-    const yearFiltered = allMovies.filter(movie => movie.year <= year);
-    const filteredMovies = movieAmount > 0 ? yearFiltered.slice(0, movieAmount) : [];
-
-    updateCounters(filteredMovies.length);
-    displayMovies(filteredMovies);
-    initializeCarousel(filteredMovies);
-}
-
-function updateSlider1() {
-    slider1Value.textContent = slider1.value;
-    filterMovies();
-}
-
-function updateSlider2() {
-    slider2Value.textContent = slider2.value;
-    filterMovies();
-}
-
-function updateCounters(count) {
-    currentCount.textContent = count;
-    filterCount.textContent = count;
-}
-
-function displayMovies(movies) {
-    moviesList.innerHTML = '';
-    movies.forEach(movie => {
-        const movieElement = document.createElement('p');
-        movieElement.textContent = `${movie.id}. ${movie.title} (${movie.year})`;
-        moviesList.appendChild(movieElement);
-    });
-}
-
-function showError() {
-    moviesList.innerHTML = '<p>Error loading movie data. Please try again later.</p>';
-}
-
-// Fisher-Yates shuffle algorithm
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
-// Carousel navigation functions
-function plusSlides(n, carousel) {
-    showSlides(slideIndexes[carousel] += n, carousel);
-}
-
-function showSlides(n, carousel) {
-    const slides = document.getElementsByClassName(carousel + "-slide");
-    
-    // Reset position if out of bounds
-    if (n > slides.length) slideIndexes[carousel] = 1;
-    if (n < 1) slideIndexes[carousel] = slides.length;
-    
-    // Hide all slides
-    Array.from(slides).forEach(slide => {
-        slide.style.display = "none";
-    });
-    
-    // Show current slide
-    if (slides[slideIndexes[carousel] - 1]) {
-        slides[slideIndexes[carousel] - 1].style.display = "block";
-    }
-}
-
-// In initializeCarousel() function, modify updateBoxContent():
-function updateBoxContent(box, movie) {
-    if (box && movie) {
-        box.innerHTML = `
-            <h2 class="movie-title">${movie.title}</h2>
-            <p class="movie-year">${movie.year}</p>
-            <p class="movie-rating">Rating: ${movie.rating}</p>
-        `;
-        box.onclick = () => viewMovieDetails(movie);
-    }
-}
-
-// Add this new function:
-function viewMovieDetails(movie) {
-    // Store movie data in sessionStorage
-    sessionStorage.setItem('currentMovie', JSON.stringify(movie));
-    // Redirect to movie details page
-    window.location.href = 'movie.html';
-}
-
-// Search functionality
 const searchTerm = document.querySelector('.searchTerm');
 const searchButton = document.querySelector('.searchButton');
-const searchError = document.createElement('p'); // For error messages
 
-function initializeSearch() {
-    // Create error message element
-    searchError.className = 'search-error';
-    searchError.style.color = '#ff6b6b';
-    searchError.style.marginTop = '10px';
-    searchError.style.display = 'none';
-    searchTerm.insertAdjacentElement('afterend', searchError);
+// ========== App State ========== //
+let allMovies = [];
+let slideIndexes = { movie: 1 };
 
-    // Set up event listeners
-    searchButton.addEventListener('click', performExactSearch);
-    searchTerm.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') performExactSearch();
-    });
-}
+// ========== Initiera App ========== //
+document.addEventListener('DOMContentLoaded', () => {
+  loadMovies();
+  setupEventListeners();
+});
 
-function performExactSearch() {
-    const searchText = searchTerm.value.trim();
-    if (!searchText) {
-        searchError.style.display = 'none';
-        filterMovies(); // Reset to normal view
-        return;
+// ========== Huvudfunktioner ========== //
+
+/** Hämtar filmer från API */
+async function loadMovies() {
+  try {
+    const response = await fetch('http://localhost:3000/api/movies');
+    
+    if (!response.ok) {
+      throw new Error(`API-svar: ${response.status} ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    
+    if (!Array.isArray(data)) {
+      throw new Error('Ogiltigt dataformat från API');
     }
 
-    // Find exact match (case insensitive)
-    const foundMovie = allMovies.find(movie => 
-        movie.title.toLowerCase() === searchText.toLowerCase()
-    );
-
-    if (foundMovie) {
-        // Redirect to movie page
-        viewMovieDetails(foundMovie);
-    } else {
-        // Show error message
-        searchError.textContent = '"' + searchText + '" does not exist in our database';
-        searchError.style.display = 'block';
-    }
+    allMovies = data;
+    updateUI();
+    
+  } catch (error) {
+    console.error('Fel vid hämtning av filmer:', error);
+    showError(`Kunde inte ladda filmer: ${error.message}`);
+  }
 }
 
+/** Uppdaterar gränssnittet med filmdata */
+function updateUI() {
+  totalCount.textContent = allMovies.length;
+  slider1.max = allMovies.length;
+  slider1.value = allMovies.length;
+  slider2.value = new Date().getFullYear(); // Sätt till aktuellt år
+  updateSliderValues();
+  filterMovies();
+}
+
+/** Filtrerar filmer baserat på användarval */
+function filterMovies() {
+  const count = parseInt(slider1.value);
+  const maxYear = parseInt(slider2.value);
+
+  const filtered = allMovies
+    .filter(movie => movie.year <= maxYear)
+    .slice(0, count);
+
+  updateCounters(filtered.length);
+  renderMovies(filtered);
+  renderCarousel(filtered);
+}
+
+// ========== Renderingsfunktioner ========== //
+
+/** Visar filmer i listan */
+function renderMovies(movies) {
+  moviesList.innerHTML = movies.map(movie => `
+    <div class="movie-item" onclick="viewMovieDetails(${movie.id})">
+      <h3>${movie.title}</h3>
+      <p>År: ${movie.year} | Betyg: ${movie.rating}</p>
+    </div>
+  `).join('');
+}
+
+/** Renderar karusellen */
+function renderCarousel(movies) {
+  const shuffled = shuffleArray([...movies]);
+  const slides = document.querySelectorAll('.movie-slide');
+  
+  slides.forEach((slide, i) => {
+    const [box1, box2] = slide.querySelectorAll('.box');
+    const movie1 = shuffled[i * 2];
+    const movie2 = shuffled[i * 2 + 1];
+    
+    renderMovieBox(box1, movie1);
+    renderMovieBox(box2, movie2);
+  });
+  
+  showSlide(1, "movie");
+}
+
+/** Fyller en box med filmdata */
+function renderMovieBox(box, movie) {
+  if (!box || !movie) return;
+  
+  box.innerHTML = `
+    <h2>${movie.title}</h2>
+    <p>År: ${movie.year}</p>
+    <p>Betyg: ${movie.rating}</p>
+  `;
+  box.onclick = () => viewMovieDetails(movie);
+}
+
+// ========== Händelsehanterare ========== //
+
+/** Konfigurerar event listeners */
+function setupEventListeners() {
+  // Sliders
+  slider1.addEventListener('input', () => {
+    updateSliderValues();
+    filterMovies();
+  });
+  
+  slider2.addEventListener('input', () => {
+    updateSliderValues();
+    filterMovies();
+  });
+
+  // Sökfunktion
+  searchButton.addEventListener('click', handleSearch);
+  searchTerm.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleSearch();
+  });
+}
+
+/** Hanterar sökning */
+function handleSearch() {
+  const query = searchTerm.value.trim().toLowerCase();
+  
+  if (!query) {
+    filterMovies();
+    return;
+  }
+
+  const results = allMovies.filter(movie => 
+    movie.title.toLowerCase().includes(query)
+  );
+
+  if (results.length > 0) {
+    renderMovies(results);
+  } else {
+    showError('Inga filmer hittades');
+  }
+}
+
+// ========== Hjälpfunktioner ========== //
+
+/** Visar felmeddelande */
+function showError(message) {
+  moviesList.innerHTML = `<div class="error">${message}</div>`;
+}
+
+/** Uppdaterar räknare */
+function updateCounters(count) {
+  currentCount.textContent = count;
+  filterCount.textContent = count;
+}
+
+/** Uppdaterar slider-värden */
+function updateSliderValues() {
+  slider1Value.textContent = slider1.value;
+  slider2Value.textContent = slider2.value;
+}
+
+/** Visa filmdetaljer */
 function viewMovieDetails(movie) {
-    sessionStorage.setItem('currentMovie', JSON.stringify(movie));
-    window.location.href = 'movie.html';
+  sessionStorage.setItem('currentMovie', JSON.stringify(movie));
+  window.location.href = 'movie.html';
 }
 
-// Add this to your loadMovies() function:
-initializeSearch();
+/** Blandar array (Fisher-Yates) */
+function shuffleArray(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+/** Karusell-navigering */
+function showSlide(n, carousel) {
+  const slides = document.querySelectorAll(`.${carousel}-slide`);
+  slideIndexes[carousel] = n > slides.length ? 1 : n < 1 ? slides.length : n;
+  
+  slides.forEach(slide => slide.style.display = 'none');
+  slides[slideIndexes[carousel] - 1].style.display = 'block';
+}
+
+// Globala funktioner för karusell-kontroller
+window.plusSlides = (n, carousel) => showSlide(slideIndexes[carousel] + n, carousel);

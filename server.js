@@ -1,47 +1,80 @@
-const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const http = require('http');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
+const PUBLIC_DIR = path.join(__dirname, 'public');
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-const moviesData = JSON.parse(fs.readFileSync(path.join(__dirname, 'movies.json'), 'utf8'));
-
-app.get('/api/movies', (req, res) => {
-    res.json(moviesData);
-});
-
-//Bara för filler men inte viktigt
-app.post('/submit-form', (req, res) => {
-    const { name, email, comment } = req.body;
-    
-    if (!name || !email) {
-        return res.status(400).json({ error: 'Name and email are required' });
-    }
-
-    console.log('Form submission received:', { name, email, comment });
-    
-    res.json({ 
-        success: true,
-        message: 'Thank you for your submission!'
+const server = http.createServer((req, res) => {
+  // Simple CORS handling
+  if (req.method === 'OPTIONS') {
+    // Handle preflight requests
+    res.writeHead(204, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Headers': 'Content-Type'
     });
-});
+    return res.end();
+  }
 
-app.get('/:page', (req, res) => {
-    const page = req.params.page;
-    const filePath = path.join(__dirname, 'public', `${page}.html`);
-    
-    if (fs.existsSync(filePath)) {
-        res.sendFile(filePath);
-    } else {
-        res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+  // Set CORS headers for all responses
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
+
+  // API endpoint for movies
+  if (req.url === '/api/movies' && req.method === 'GET') {
+    try {
+      const data = fs.readFileSync(path.join(__dirname, 'movies.json'), 'utf8');
+      res.writeHead(200, {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache'
+      });
+      return res.end(data);
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      return res.end(JSON.stringify({ error: 'Could not load movies data' }));
     }
+  }
+
+  // Serve static files
+  let filePath = path.join(PUBLIC_DIR, req.url === '/' ? 'index.html' : req.url);
+
+  // Security: Prevent directory traversal
+  if (!filePath.startsWith(PUBLIC_DIR)) {
+    res.writeHead(403);
+    return res.end('Forbidden');
+  }
+
+  // Default to index.html for non-file requests (SPA support)
+  const ext = path.extname(filePath);
+  if (!ext) {
+    filePath = path.join(PUBLIC_DIR, 'index.html');
+  }
+
+  fs.readFile(filePath, (err, content) => {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        res.writeHead(404);
+        return res.end('Not found');
+      }
+      res.writeHead(500);
+      return res.end('Server error');
+    }
+
+    const contentType = {
+      '.html': 'text/html',
+      '.js': 'application/javascript',
+      '.css': 'text/css',
+      '.json': 'application/json',
+      '.png': 'image/png',
+      '.jpg': 'image/jpeg'
+    }[ext] || 'text/plain';
+
+    res.writeHead(200, { 'Content-Type': contentType });
+    res.end(content);
+  });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
