@@ -49,7 +49,6 @@ async function loadMovies() {
     console.error('Fel vid hämtning av filmer:', error);
     showError(`Kunde inte ladda filmer: ${error.message}`);
     
-    // Fallback: Ladda från lokal JSON om API misslyckas
     try {
       const localResponse = await fetch('movies.json');
       const localData = await localResponse.json();
@@ -61,17 +60,15 @@ async function loadMovies() {
   }
 }
 
-/** Uppdaterar gränssnittet med filmdata */
 function updateUI() {
   totalCount.textContent = allMovies.length;
   slider1.max = allMovies.length;
   slider1.value = allMovies.length;
-  slider2.value = new Date().getFullYear(); // Sätt till aktuellt år
+  slider2.value = new Date().getFullYear(); 
   updateSliderValues();
   filterMovies();
 }
 
-/** Filtrerar filmer baserat på användarval */
 function filterMovies() {
   const count = parseInt(slider1.value);
   const maxYear = parseInt(slider2.value);
@@ -87,7 +84,7 @@ function filterMovies() {
 
 // ========== Renderingsfunktioner ========== //
 
-/** Visar filmer i listan */
+
 function renderMovies(movies) {
   moviesList.innerHTML = movies.map(movie => `
     <div class="movie-item" onclick="viewMovieDetails(${movie.id})">
@@ -97,7 +94,7 @@ function renderMovies(movies) {
   `).join('');
 }
 
-/** Renderar karusellen */
+
 function renderCarousel(movies) {
   const shuffled = shuffleArray([...movies]);
   const slides = document.querySelectorAll('.movie-slide');
@@ -114,7 +111,6 @@ function renderCarousel(movies) {
   showSlide(1, "movie");
 }
 
-/** Fyller en box med filmdata */
 function renderMovieBox(box, movie) {
   if (!box || !movie) return;
   
@@ -126,9 +122,9 @@ function renderMovieBox(box, movie) {
   box.onclick = () => viewMovieDetails(movie);
 }
 
-// ========== Händelsehanterare ========== //
+// ========== Funktion hanterare ========== //
 
-/** Konfigurerar event listeners */
+
 function setupEventListeners() {
   // Sliders
   slider1.addEventListener('input', () => {
@@ -141,14 +137,12 @@ function setupEventListeners() {
     filterMovies();
   });
 
-  // Sökfunktion
   searchButton.addEventListener('click', handleSearch);
   searchTerm.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleSearch();
   });
 }
 
-/** Hanterar sökning */
 function handleSearch() {
   const query = searchTerm.value.trim().toLowerCase();
   
@@ -170,57 +164,44 @@ function handleSearch() {
 
 // ========== Hjälpfunktioner ========== //
 
-/** Visar felmeddelande */
 function showError(message) {
   moviesList.innerHTML = `<div class="error">${message}</div>`;
 }
 
-/** Uppdaterar räknare */
 function updateCounters(count) {
   currentCount.textContent = count;
   filterCount.textContent = count;
 }
 
-/** Uppdaterar slider-värden */
 function updateSliderValues() {
   slider1Value.textContent = slider1.value;
   slider2Value.textContent = slider2.value;
 }
 
-/** Visa filmdetaljer */
 
-  sessionStorage.setItem('currentMovie', JSON.stringify(movie));
-  window.location.href = 'movie.html';
-// Update the viewMovieDetails function
-// Ersätt din nuvarande viewMovieDetails-funktion med denna:
 function viewMovieDetails(movie) {
   if (!movie || !movie.id) {
     console.error('Invalid movie object:', movie);
     return;
   }
   
-  // Spara filmen i sessionStorage som backup
   sessionStorage.setItem('currentMovie', JSON.stringify(movie));
   
-  // Hämta detaljer från API
   fetch(`http://localhost:3000/api/movies/${movie.id}`)
     .then(response => {
       if (!response.ok) throw new Error('Movie not found');
       return response.json();
     })
     .then(movieData => {
-      // Uppdatera med data från API om det finns
       sessionStorage.setItem('currentMovie', JSON.stringify(movieData));
       window.location.href = 'movie.html';
     })
     .catch(error => {
       console.error('Error fetching movie details:', error);
-      // Använd sessionStorage-data om API-anropet misslyckas
       window.location.href = 'movie.html';
     });
 }
 
-/** Blandar array (Fisher-Yates) */
 function shuffleArray(array) {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
@@ -230,7 +211,6 @@ function shuffleArray(array) {
   return arr;
 }
 
-/** Karusell-navigering */
 function showSlide(n, carousel) {
   const slides = document.querySelectorAll(`.${carousel}-slide`);
   slideIndexes[carousel] = n > slides.length ? 1 : n < 1 ? slides.length : n;
@@ -239,5 +219,4 @@ function showSlide(n, carousel) {
   slides[slideIndexes[carousel] - 1].style.display = 'block';
 }
 
-// Globala funktioner för karusell-kontroller
 window.plusSlides = (n, carousel) => showSlide(slideIndexes[carousel] + n, carousel);
