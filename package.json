@@ -1,16 +1,9 @@
 {
-  "name": "gsab-styles",
+  "name": "tnm115-project-material",
   "version": "1.0.0",
-  "description": "Webbplats för projekt",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "Course project datasets, i.e., IMDb, BechdelTest, and ActorInfo, for JSON data import to MongoDB data storage system.",
+  "author": "Nico Reski, Katerina Vrotsou",
   "dependencies": {
-    "express": "^4.21.2"
+    "mongodb": "6.12.0"
   }
 }

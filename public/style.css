@@ -1,7 +1,7 @@
 /* Non-class changes first */
 @font-face {
     font-family: 'Angerpoise';
-    src: url('fonts/Angerpoise\ Lampshade.otf') format('truetype');
+    src: url('../fonts/Angerpoise-Lampshade.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

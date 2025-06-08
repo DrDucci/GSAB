@@ -48,6 +48,16 @@ async function loadMovies() {
   } catch (error) {
     console.error('Fel vid hämtning av filmer:', error);
     showError(`Kunde inte ladda filmer: ${error.message}`);
+    
+    // Fallback: Ladda från lokal JSON om API misslyckas
+    try {
+      const localResponse = await fetch('movies.json');
+      const localData = await localResponse.json();
+      allMovies = localData;
+      updateUI();
+    } catch (localError) {
+      console.error('Fel vid hämtning av lokal data:', localError);
+    }
   }
 }
 
@@ -178,9 +188,36 @@ function updateSliderValues() {
 }
 
 /** Visa filmdetaljer */
-function viewMovieDetails(movie) {
+
   sessionStorage.setItem('currentMovie', JSON.stringify(movie));
   window.location.href = 'movie.html';
+// Update the viewMovieDetails function
+// Ersätt din nuvarande viewMovieDetails-funktion med denna:
+function viewMovieDetails(movie) {
+  if (!movie || !movie.id) {
+    console.error('Invalid movie object:', movie);
+    return;
+  }
+  
+  // Spara filmen i sessionStorage som backup
+  sessionStorage.setItem('currentMovie', JSON.stringify(movie));
+  
+  // Hämta detaljer från API
+  fetch(`http://localhost:3000/api/movies/${movie.id}`)
+    .then(response => {
+      if (!response.ok) throw new Error('Movie not found');
+      return response.json();
+    })
+    .then(movieData => {
+      // Uppdatera med data från API om det finns
+      sessionStorage.setItem('currentMovie', JSON.stringify(movieData));
+      window.location.href = 'movie.html';
+    })
+    .catch(error => {
+      console.error('Error fetching movie details:', error);
+      // Använd sessionStorage-data om API-anropet misslyckas
+      window.location.href = 'movie.html';
+    });
 }
 
 /** Blandar array (Fisher-Yates) */

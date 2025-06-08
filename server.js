@@ -1,17 +1,17 @@
 const path = require('path');
 const fs = require('fs');
 const http = require('http');
+const connect = require('./db');
 
 const PORT = 3000;
 const PUBLIC_DIR = path.join(__dirname, 'public');
 
-const server = http.createServer((req, res) => {
-  // Simple CORS handling
+const server = http.createServer(async (req, res) => {
+  // CORS handling
   if (req.method === 'OPTIONS') {
-    // Handle preflight requests
     res.writeHead(204, {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type'
     });
     return res.end();
@@ -19,24 +19,54 @@ const server = http.createServer((req, res) => {
 
   // Set CORS headers for all responses
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
 
-  // API endpoint for movies
+  // API: /api/movies - Get all movies
   if (req.url === '/api/movies' && req.method === 'GET') {
     try {
-      const data = fs.readFileSync(path.join(__dirname, 'movies.json'), 'utf8');
+      const db = await connect();
+      const movies = await db.collection('movies').find({}).toArray();
+      
       res.writeHead(200, {
         'Content-Type': 'application/json',
         'Cache-Control': 'no-cache'
       });
-      return res.end(data);
+      return res.end(JSON.stringify(movies));
     } catch (err) {
+      console.error('❌ MongoDB connection error:', err);
       res.writeHead(500, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify({ error: 'Could not load movies data' }));
+      return res.end(JSON.stringify({ error: 'Could not fetch movies from database' }));
     }
   }
 
-  // Serve static files
+  // API: /api/movies/:id - Get single movie
+  if (req.url.startsWith('/api/movies/') && req.method === 'GET') {
+    const id = parseInt(req.url.split('/')[3]); // Convert to number
+    
+    if (isNaN(id)) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      return res.end(JSON.stringify({ error: 'Invalid movie ID' }));
+    }
+
+    try {
+      const db = await connect();
+      const movie = await db.collection('movies').findOne({ id });
+      
+      if (!movie) {
+        res.writeHead(404, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: 'Movie not found' }));
+      }
+
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      return res.end(JSON.stringify(movie));
+    } catch (err) {
+      console.error('❌ MongoDB error:', err);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      return res.end(JSON.stringify({ error: 'Server error' }));
+    }
+  }
+
+  // Static file serving
   let filePath = path.join(PUBLIC_DIR, req.url === '/' ? 'index.html' : req.url);
 
   // Security: Prevent directory traversal
@@ -67,8 +97,11 @@ const server = http.createServer((req, res) => {
       '.css': 'text/css',
       '.json': 'application/json',
       '.png': 'image/png',
-      '.jpg': 'image/jpeg'
-    }[ext] || 'text/plain';
+      '.jpg': 'image/jpeg',
+      '.jpeg': 'image/jpeg',
+      '.gif': 'image/gif',
+      '.svg': 'image/svg+xml'
+    }[ext.toLowerCase()] || 'text/plain';
 
     res.writeHead(200, { 'Content-Type': contentType });
     res.end(content);
@@ -76,5 +109,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
