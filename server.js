@@ -1,84 +1,80 @@
 const path = require('path');
 const fs = require('fs');
 const http = require('http');
-const connect = require('./db');
 
 const PORT = 3000;
-const PUBLIC_DIR = path.join(__dirname, 'public');
+const PUBLIC_DIR = path.join(dirname, 'public');
 
-const server = http.createServer(async (req, res) => {
+const server = http.createServer((req, res) => {
+  // Simple CORS handling
   if (req.method === 'OPTIONS') {
+    // Handle preflight requests
     res.writeHead(204, {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Origin': '',
+      'Access-Control-Allow-Methods': 'GET',
       'Access-Control-Allow-Headers': 'Content-Type'
     });
     return res.end();
   }
 
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  // Set CORS headers for all responses
+  res.setHeader('Access-Control-Allow-Origin', '');
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
 
+  // API endpoint for movies
   if (req.url === '/api/movies' && req.method === 'GET') {
     try {
-      const db = await connect();
-      const movies = await db.collection('movies').find({}).toArray();
-      
+      const data = fs.readFileSync(path.join(dirname, 'movies.json'), 'utf8');
       res.writeHead(200, {
         'Content-Type': 'application/json',
         'Cache-Control': 'no-cache'
       });
-      return res.end(JSON.stringify(movies));
+      return res.end(data);
     } catch (err) {
-      console.error('❌ MongoDB connection error:', err);
       res.writeHead(500, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify({ error: 'Could not fetch movies from database' }));
+      return res.end(JSON.stringify({ error: 'Could not load movies data' }));
     }
   }
 
-  if (req.url.startsWith('/api/movies/') && req.method === 'GET') {
-    const id = parseInt(req.url.split('/')[3]); 
+  // Add this endpoint before the static files handler
+if (req.url === '/api/transformed-movies' && req.method === 'GET') {
+  try {
+    const imdbData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/imdb.json')));
+    const transformed = imdbData.data.map(movie => ({
+      id: movie._id,
+      title: movie.title,
+      year: movie.year,
+      rating: movie.avgRating
+    }));
     
-    if (isNaN(id)) {
-      res.writeHead(400, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify({ error: 'Invalid movie ID' }));
-    }
-
-    try {
-      const db = await connect();
-      const movie = await db.collection('movies').findOne({ id });
-      
-      if (!movie) {
-        res.writeHead(404, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'Movie not found' }));
-      }
-
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify(movie));
-    } catch (err) {
-      console.error('❌ MongoDB error:', err);
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify({ error: 'Server error' }));
-    }
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    return res.end(JSON.stringify(transformed));
+  } catch (err) {
+    res.writeHead(500);
+    return res.end(JSON.stringify({error: 'Transformation failed'}));
   }
-let filePath = path.join(PUBLIC_DIR, req.url === '/' ? 'main.html' : req.url);
-
-if (!filePath.startsWith(PUBLIC_DIR)) {
-  res.writeHead(403);
-  return res.end('Forbidden');
 }
 
-const ext = path.extname(filePath);
-if (!ext) {
-  filePath = path.join(PUBLIC_DIR, 'main.html');
-}
+  // Serve static files
+  let filePath = path.join(PUBLIC_DIR, req.url === '/' ? 'index.html' : req.url);
 
+  // Security: Prevent directory traversal
+  if (!filePath.startsWith(PUBLIC_DIR)) {
+    res.writeHead(403);
+    return res.end('Forbidden');
+  }
+
+  // Default to index.html for non-file requests (SPA supporFt)
+  const ext = path.extname(filePath);
+  if (!ext) {
+    filePath = path.join(PUBLIC_DIR, 'index.html');
+  }
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
       if (err.code === 'ENOENT') {
         res.writeHead(404);
-        return res.end('Not found'); 
+        return res.end('Not found');
       }
       res.writeHead(500);
       return res.end('Server error');
@@ -90,11 +86,8 @@ if (!ext) {
       '.css': 'text/css',
       '.json': 'application/json',
       '.png': 'image/png',
-      '.jpg': 'image/jpeg',
-      '.jpeg': 'image/jpeg',
-      '.gif': 'image/gif',
-      '.svg': 'image/svg+xml'
-    }[ext.toLowerCase()] || 'text/plain';
+      '.jpg': 'image/jpeg'
+    }[ext] || 'text/plain';
 
     res.writeHead(200, { 'Content-Type': contentType });
     res.end(content);
@@ -102,5 +95,5 @@ if (!ext) {
 });
 
 server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log('Server running at http://localhost:${PORT}');
 });
